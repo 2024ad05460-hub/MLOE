@@ -1,0 +1,2 @@
+﻿Normalisation experiment columns: ['accuracy_change_points', 'accuracy_pct', 'condition', 'critical_recall_change_points', 'mean_shift_sigma', 'recall_critical_pct', 'validation_samples']
+Wrote figures to C:\LogiEdge\LogiEdge_Complete_Assignment_Package\reports\figures

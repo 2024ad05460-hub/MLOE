@@ -1,0 +1,212 @@
+[
+  {
+    "phase": "CLEAN",
+    "t_min": 18.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 19.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 20.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 21.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 22.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 23.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "CLEAN",
+    "t_min": 24.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 25.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 26.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 27.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 28.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 29.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 30.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 31.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 32.5,
+    "psi": 0.0083
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 33.5,
+    "psi": 0.0559
+  },
+  {
+    "phase": "INJECTED",
+    "t_min": 34.5,
+    "psi": 0.0559
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 35.5,
+    "psi": 0.0559
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 36.5,
+    "psi": 0.0559
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 37.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 38.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 39.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 40.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 41.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 42.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 43.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 44.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 45.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 46.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 47.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 48.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 49.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 50.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 51.5,
+    "psi": 0.0299
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 52.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 53.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 54.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 55.5,
+    "psi": 0.0017
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 56.5,
+    "psi": 0.0077
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 57.5,
+    "psi": 0.0077
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 58.5,
+    "psi": 0.0077
+  },
+  {
+    "phase": "RECOVERED",
+    "t_min": 59.5,
+    "psi": 0.0077
+  }
+]

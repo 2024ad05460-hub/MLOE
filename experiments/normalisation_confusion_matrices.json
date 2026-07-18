@@ -1,0 +1,74 @@
+{
+  "correct stats": {
+    "class_order": [
+      "Normal",
+      "Warning",
+      "Critical"
+    ],
+    "confusion_matrix": [
+      [
+        247,
+        0,
+        1
+      ],
+      [
+        2,
+        157,
+        1
+      ],
+      [
+        0,
+        1,
+        173
+      ]
+    ]
+  },
+  "+3 sigma shift": {
+    "class_order": [
+      "Normal",
+      "Warning",
+      "Critical"
+    ],
+    "confusion_matrix": [
+      [
+        248,
+        0,
+        0
+      ],
+      [
+        4,
+        155,
+        1
+      ],
+      [
+        0,
+        0,
+        174
+      ]
+    ]
+  },
+  "-3 sigma shift": {
+    "class_order": [
+      "Normal",
+      "Warning",
+      "Critical"
+    ],
+    "confusion_matrix": [
+      [
+        72,
+        64,
+        112
+      ],
+      [
+        0,
+        157,
+        3
+      ],
+      [
+        0,
+        0,
+        174
+      ]
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "split_method": "grouped_by_simulated_truck",
+  "overlapping_groups": [],
+  "train_groups": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+  ],
+  "validation_groups": [
+    5,
+    6
+  ],
+  "train_windows": 2328,
+  "validation_windows": 582,
+  "train_class_counts": {
+    "0": 1009,
+    "1": 660,
+    "2": 659
+  },
+  "validation_class_counts": {
+    "0": 248,
+    "1": 160,
+    "2": 174
+  }
+}

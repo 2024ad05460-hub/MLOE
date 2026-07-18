@@ -1,0 +1,29 @@
+{
+  "reference_windows": 300,
+  "rolling_window": 100,
+  "evaluation_interval_seconds": 60,
+  "warning_threshold": 0.1,
+  "drift_threshold": 0.25,
+  "clean_maximum_psi": 0.0058,
+  "injected_maximum_psi": 2.5887,
+  "recovered_final_psi": 0.0309,
+  "detection_lag_minutes": 3.0,
+  "score": "normal_prob",
+  "bins": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "bin_labels": [
+    "[0,0.25)",
+    "[0.25,0.50)",
+    "[0.50,0.75)",
+    "[0.75,1.0]"
+  ],
+  "reference_source": "300_clean_normal_condition_windows",
+  "simulation_status": "drift_detected_and_recovered",
+  "trace_file": "C:\\LogiEdge\\LogiEdge_Complete_Assignment_Package\\monitoring\\psi_trace.json",
+  "generated_utc": "2026-07-18T03:16:32.222208+00:00"
+}

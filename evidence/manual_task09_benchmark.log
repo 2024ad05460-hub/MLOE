@@ -1,0 +1,74 @@
+﻿C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[BENCH] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[BENCH] Dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[BENCH] Validation shape: X=(582, 6), y=(582,)
+[BENCH] Laptop TDP assumption: 45.00 W
+
+========================================================================
+[BENCH] M1_FP32
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
+========================================================================
+[BENCH] size=5.19 KB
+[BENCH] accuracy=99.48%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0027 ms mean, 0.0032 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M2_PTQ_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+========================================================================
+[BENCH] size=4.46 KB
+[BENCH] accuracy=99.31%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0081 ms mean, 0.0097 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M3_PRUNE35_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+========================================================================
+[BENCH] size=3.63 KB
+[BENCH] accuracy=99.14%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0083 ms mean, 0.0105 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+[PARETO] Frontier validation
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002690 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008063 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008328 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] recommended=M1_FP32
+[PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+
+========================================================================
+BENCHMARK COMPLETE
+========================================================================
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0027 ms, p95=0.0032 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0097 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0083 ms, p95=0.0105 ms, size=3.63 KB, energy=0.000000 mJ
+
+Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
+Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+Pareto chart: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_chart.png

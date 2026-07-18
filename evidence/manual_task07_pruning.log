@@ -1,0 +1,14 @@
+﻿[PRUNE] training trucks=[0, 1, 2, 3, 4, 7, 8, 9]; validation trucks=[5, 6]; overlap=0
+[PRUNE] training windows=2328; validation windows=582
+[PRUNE] d1 unstructured sparsity=34.9%
+[PRUNE] d2 unstructured sparsity=35.0%
+[PRUNE] combined hidden-kernel sparsity=34.94%
+[PRUNE] structural d1 32 -> 21; d2 16 -> 10
+[PRUNE] INT8 calibration distribution: class 0=108, class 1=71, class 2=71
+[SAVE] compact FP32 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_fp32.keras
+[SAVE] compact INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[SAVE] M3 metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_metrics.json
+[SAVE] optimisation metadata: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\model_optimisation_metadata.json
+[PRUNE] params=400; reduction=50.2%; size=3.63 KB; grouped validation accuracy=99.14%
+[PRUNE] recall Normal=99.6% Warning=98.1% Critical=99.4%
+[PASS] M3 pruning and INT8 quantisation completed

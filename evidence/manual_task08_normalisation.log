@@ -1,0 +1,33 @@
+﻿INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[NORM] Loading dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[NORM] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[NORM] Using grouped validation split: X_raw, y, val_idx
+[NORM] Loading frozen statistics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy
+[NORM] Frozen mean: [ 4.199489,  0.1237  , -0.006027,  0.449942,  0.481157, -0.76394 ]
+[NORM] Frozen std : [0.180327, 0.030614, 0.383132, 0.019348, 0.024526, 0.548218]
+[NORM] Held-out validation shape: X=(582, 6), y=(582,)
+[NORM] Validation class distribution: 0=248, 1=160, 2=174
+[NORM] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[NORM] Input tensor: shape=(1, 6), dtype=int8, scale=0.24223273992538452, zero_point=-112
+[NORM] Output tensor: dtype=int8, scale=0.00390625, zero_point=-128
+
+========================================================================
+NORMALISATION SENSITIVITY EXPERIMENT
+========================================================================
+Correct statistics: accuracy=99.14%, Critical recall=99.43%
+Shifted mean (+3 sigma): accuracy=99.14%, Critical recall=100.00%
+Accuracy change: +0.00 percentage points
+Critical recall change: +0.57 percentage points
+
+Correct-statistics confusion matrix:
+[[247   0   1]
+ [  2 157   1]
+ [  0   1 173]]
+
+Shifted-3sigma confusion matrix:
+[[248   0   0]
+ [  4 155   1]
+ [  0   0 174]]
+
+CSV saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_experiment.csv
+Confusion matrices saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_confusion_matrices.npz

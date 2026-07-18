@@ -1,0 +1,31 @@
+{
+  "purpose": "Exact Task D1 minimum-duration dataset evidence",
+  "total_windows": 291,
+  "classes": [
+    {
+      "class": 0,
+      "label": "Normal",
+      "simulator_mode": "none",
+      "duration_minutes": 20,
+      "windows": 117,
+      "assignment_approximation": "~120"
+    },
+    {
+      "class": 1,
+      "label": "Warning",
+      "simulator_mode": "temp_drift",
+      "duration_minutes": 15,
+      "windows": 87,
+      "assignment_approximation": "~90"
+    },
+    {
+      "class": 2,
+      "label": "Critical",
+      "simulator_mode": "combined",
+      "duration_minutes": 15,
+      "windows": 87,
+      "assignment_approximation": "~90"
+    }
+  ],
+  "note": "The 30 s window closes first at t=30 s and the simulator emits samples through duration-1 s, hence 117 and 87 windows rather than the rounded assignment estimates 120 and 90."
+}

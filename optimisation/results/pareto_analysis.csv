@@ -1,0 +1,4 @@
+variant,accuracy_pct,mean_latency_ms,size_kb,pareto_optimal,recommended
+M1_FP32,99.4845,0.00269,5.1875,True,True
+M2_PTQ_INT8,99.3127,0.008063,4.4609,True,False
+M3_PRUNE35_INT8,99.1409,0.008328,3.6328,True,False

@@ -1,0 +1,97 @@
+﻿---
+# Exactly seven top-level deployment tasks, matching Task E2.
+- name: Deploy LogiEdge inference stack to cold-chain trucks
+  hosts: trucks
+  become: true
+  gather_facts: false
+
+  vars:
+    logibridge_dir: /opt/logibridge
+    data_dir: "{{ logibridge_dir }}/data"
+    registry: "{{ local_registry | default('localhost:5000') }}"
+    image: "{{ registry }}/logibridge/inference:{{ model_version | default('v2') }}"
+    container_name: logibridge-inference
+    model_src: ../training/models/m3_pruned_int8.tflite
+    reference_src: ../monitoring/reference_dist.json
+    stats_src: ../data_pipeline/training_stats.npy
+
+  tasks:
+    # 1
+    - name: Create LogiEdge data directory if not present
+      ansible.builtin.file:
+        path: "{{ data_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+
+    # 2
+    - name: Copy new model file to the persistent data directory
+      ansible.builtin.copy:
+        src: "{{ model_src }}"
+        dest: "{{ data_dir }}/model.tflite"
+        mode: "0644"
+        backup: true
+      register: model_copy
+
+    # 3 - one task, two required configuration artefacts
+    - name: Copy updated PSI reference and frozen normalisation statistics
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ data_dir }}/{{ item.dest }}"
+        mode: "0644"
+      loop:
+        - { src: "{{ reference_src }}", dest: reference_dist.json }
+        - { src: "{{ stats_src }}", dest: training_stats.npy }
+      register: config_copy
+
+    # 4
+    - name: Stop the running inference container when model or configuration changed
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: stopped
+      when: model_copy.changed or config_copy.changed
+
+    # 5
+    - name: Pull updated container image from the local Docker registry
+      community.docker.docker_image:
+        name: "{{ image }}"
+        source: pull
+        force_source: false
+
+    # 6
+    - name: Start inference container with separate local and uplink MQTT settings
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image }}"
+        state: started
+        restart_policy: unless-stopped
+        network_mode: host
+        env:
+          MODEL_PATH: /data/model.tflite
+          STATS_PATH: /data/training_stats.npy
+          REFERENCE_PATH: /data/reference_dist.json
+          ALERT_DB: /data/alerts.db
+          TRUCK_ID: "{{ inventory_hostname }}"
+          LOCAL_MQTT_HOST: "127.0.0.1"
+          LOCAL_MQTT_PORT: "1883"
+          UPLINK_MQTT_HOST: "{{ uplink_mqtt_host | default('ops-mqtt.freightbridge.local') }}"
+          UPLINK_MQTT_PORT: "{{ uplink_mqtt_port | default('8883') | string }}"
+          UPLINK_MQTT_TLS: "{{ uplink_mqtt_tls | default('true') | string | lower }}"
+        volumes:
+          - "{{ data_dir }}:/data"
+        comparisons:
+          "*": strict
+
+    # 7
+    - name: Wait up to 15 seconds and verify container is running
+      community.docker.docker_container_info:
+        name: "{{ container_name }}"
+      register: container_info
+      until:
+        - container_info.exists
+        - container_info.container.State.Running
+      retries: 5
+      delay: 3
+      changed_when: false
+

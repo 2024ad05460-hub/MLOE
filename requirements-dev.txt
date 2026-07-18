@@ -1,0 +1,21 @@
+# LogiEdge training / report environment
+# Supported: Python 3.11 or 3.12. Do not use Python 3.13 for the M3 pruning run.
+# Install with setup_training_env.sh or setup_training_env.ps1 so that the
+# TensorFlow Model Optimization package is installed with its stale NumPy
+# dependency metadata bypassed safely.
+tensorflow-cpu==2.20.0
+keras>=3.10,<4
+tf-keras==2.20.1
+numpy==1.26.4
+scipy>=1.14,<2
+matplotlib>=3.9,<4
+psutil>=6,<8
+paho-mqtt==2.1.0
+PyYAML>=6,<7
+pytest>=8,<9
+absl-py==1.4.0
+dm-tree==0.1.8
+six>=1.16,<2
+python-docx>=1.1,<2
+Pillow>=10,<12
+tensorflow-model-optimization

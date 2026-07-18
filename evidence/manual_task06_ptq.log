@@ -1,0 +1,5 @@
+﻿[SAVE] INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+[SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_metrics.json
+[PTQ] size=4.46 KB; grouped validation accuracy=99.31%
+[PTQ] recall Normal=100.0% Warning=98.1% Critical=99.4%
+[PASS] M2 full-INT8 PTQ conversion completed

@@ -1,0 +1,20 @@
+{
+  "verification_date_utc": "2026-07-16",
+  "python_compilation": "PASS",
+  "pytest": "8 passed",
+  "exact_assignment_dataset_windows": {"Normal": 117, "Warning": 87, "Critical": 87, "total": 291},
+  "grouped_dataset": {"train_windows": 2328, "validation_windows": 582, "group_overlap": 0},
+  "models": {
+    "M1_FP32": {"accuracy_pct": 99.48, "critical_recall_pct": 99.4, "size_kb": 5.19},
+    "M2_PTQ_INT8": {"accuracy_pct": 99.31, "critical_recall_pct": 99.4, "size_kb": 4.46},
+    "M3_PRUNE35_INT8": {"accuracy_pct": 99.14, "critical_recall_pct": 99.4, "size_kb": 3.70}
+  },
+  "benchmark_latest": {
+    "M1_mean_latency_us": 1.41,
+    "M2_mean_latency_us": 1.42,
+    "M3_mean_latency_us": 1.42,
+    "note": "x86_64 development host; differences are within measurement noise"
+  },
+  "psi": {"clean_max": 0.008, "fault_max": 2.614, "threshold_cross_minutes": 3.0, "recovery_final": 0.037},
+  "environment_limits": ["Docker daemon unavailable", "Ansible unavailable", "Mosquitto unavailable", "No physical Raspberry Pi 5"]
+}

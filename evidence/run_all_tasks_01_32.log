@@ -1,0 +1,1264 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260718101558
+Username: LAPTOP-QP7JV6SQ\ASUS
+RunAs User: LAPTOP-QP7JV6SQ\ASUS
+Configuration Name: 
+Machine: LAPTOP-QP7JV6SQ (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\ASUS\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\ASUS\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\ASUS\AppData\Roaming\Code\logs\20260718T093219\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\ASUS\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-34492-999751.json' -FeatureFlags @() 
+Process ID: 1324
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+========================================================================================
+LogiEdge Complete End-to-End Pipeline - Tasks 1 to 32
+========================================================================================
+[STEP] Validate environment and required source files
+[STEP] Verify Docker engine
+  GitCommit:        e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+ runc:
+  Version:          1.3.6
+  GitCommit:        v1.3.6-0-g491b69ba
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+0
+[STEP] Verify Docker Compose
+
+0
+[PASS] Preflight validation complete
+
+========================================================================================
+Task 1 - Check Prerequisites
+========================================================================================
+[INFO] Python executable: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Scripts\python.exe
+[STEP] Check Python version
+
+0
+[STEP] Check NumPy
+
+0
+[STEP] Check TensorFlow
+
+0
+[STEP] Check Paho MQTT
+
+0
+[STEP] Check Docker
+
+0
+[STEP] Check Docker Compose
+
+0
+[STEP] Check WSL
+
+0
+[PASS] Task 1 prerequisites passed
+
+========================================================================================
+Task 2 - Generate Assignment-Duration Dataset
+========================================================================================
+[STEP] Generate assignment-duration dataset
+[ASSIGN-DATA] class=0 Normal   mode=none       duration=20 min windows=117
+[ASSIGN-DATA] class=1 Warning  mode=temp_drift duration=15 min windows=87
+[ASSIGN-DATA] class=2 Critical mode=combined   duration=15 min windows=87
+[ASSIGN-DATA] total=291 -> training/assignment_dataset.npz
+[ASSIGN-DATA] class=0 Normal   mode=none       duration=20 min windows=117
+[ASSIGN-DATA] class=1 Warning  mode=temp_drift duration=15 min windows=87
+[ASSIGN-DATA] class=2 Critical mode=combined   duration=15 min windows=87
+[ASSIGN-DATA] total=291 -> training/assignment_dataset.npz
+[PASS] Task 2 assignment dataset generated
+
+========================================================================================
+Task 3 - Generate Grouped Training Dataset
+========================================================================================
+[STEP] Generate grouped training dataset
+  TRK-SIM-00:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-01:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-02:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-03:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-04:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-05:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-06:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-07:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-08:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-09:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-00:temp_drift           87 windows; onset=  69.0s; pre-onset Normal=4
+  TRK-SIM-01:temp_drift           87 windows; onset=  50.8s; pre-onset Normal=3
+  TRK-SIM-02:temp_drift           87 windows; onset= 106.7s; pre-onset Normal=8
+  TRK-SIM-03:temp_drift           87 windows; onset=  35.4s; pre-onset Normal=1
+  TRK-SIM-04:temp_drift           87 windows; onset=  76.8s; pre-onset Normal=5
+  TRK-SIM-05:temp_drift           87 windows; onset=  86.1s; pre-onset Normal=6
+  TRK-SIM-06:temp_drift           87 windows; onset= 104.6s; pre-onset Normal=8
+  TRK-SIM-07:temp_drift           87 windows; onset=  91.2s; pre-onset Normal=7
+  TRK-SIM-08:temp_drift           87 windows; onset= 107.4s; pre-onset Normal=8
+  TRK-SIM-09:temp_drift           87 windows; onset=  25.4s; pre-onset Normal=0
+  TRK-SIM-00:combined             87 windows; onset=  52.4s; pre-onset Normal=3
+  TRK-SIM-01:combined             87 windows; onset= 110.1s; pre-onset Normal=9
+  TRK-SIM-02:combined             87 windows; onset=  17.8s; pre-onset Normal=0
+  TRK-SIM-03:combined             87 windows; onset=   7.5s; pre-onset Normal=0
+  TRK-SIM-04:combined             87 windows; onset= 102.2s; pre-onset Normal=8
+  TRK-SIM-05:combined             87 windows; onset=  11.5s; pre-onset Normal=0
+  TRK-SIM-06:combined             87 windows; onset=   4.1s; pre-onset Normal=0
+  TRK-SIM-07:combined             87 windows; onset=  53.5s; pre-onset Normal=3
+  TRK-SIM-08:combined             87 windows; onset= 100.0s; pre-onset Normal=7
+  TRK-SIM-09:combined             87 windows; onset=  99.7s; pre-onset Normal=7
+[STATS] fitted on 342 clean windows from 6 separate commissioning trucks
+[DATA] 2328 train / 582 validation windows; group overlap=0
+[DATA] validation trucks=[5, 6]
+  TRK-SIM-00:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-01:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-02:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-03:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-04:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-05:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-06:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-07:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-08:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-09:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-00:temp_drift           87 windows; onset=  69.0s; pre-onset Normal=4
+  TRK-SIM-01:temp_drift           87 windows; onset=  50.8s; pre-onset Normal=3
+  TRK-SIM-02:temp_drift           87 windows; onset= 106.7s; pre-onset Normal=8
+  TRK-SIM-03:temp_drift           87 windows; onset=  35.4s; pre-onset Normal=1
+  TRK-SIM-04:temp_drift           87 windows; onset=  76.8s; pre-onset Normal=5
+  TRK-SIM-05:temp_drift           87 windows; onset=  86.1s; pre-onset Normal=6
+  TRK-SIM-06:temp_drift           87 windows; onset= 104.6s; pre-onset Normal=8
+  TRK-SIM-07:temp_drift           87 windows; onset=  91.2s; pre-onset Normal=7
+  TRK-SIM-08:temp_drift           87 windows; onset= 107.4s; pre-onset Normal=8
+  TRK-SIM-09:temp_drift           87 windows; onset=  25.4s; pre-onset Normal=0
+  TRK-SIM-00:combined             87 windows; onset=  52.4s; pre-onset Normal=3
+  TRK-SIM-01:combined             87 windows; onset= 110.1s; pre-onset Normal=9
+  TRK-SIM-02:combined             87 windows; onset=  17.8s; pre-onset Normal=0
+  TRK-SIM-03:combined             87 windows; onset=   7.5s; pre-onset Normal=0
+  TRK-SIM-04:combined             87 windows; onset= 102.2s; pre-onset Normal=8
+  TRK-SIM-05:combined             87 windows; onset=  11.5s; pre-onset Normal=0
+  TRK-SIM-06:combined             87 windows; onset=   4.1s; pre-onset Normal=0
+  TRK-SIM-07:combined             87 windows; onset=  53.5s; pre-onset Normal=3
+  TRK-SIM-08:combined             87 windows; onset= 100.0s; pre-onset Normal=7
+  TRK-SIM-09:combined             87 windows; onset=  99.7s; pre-onset Normal=7
+[STATS] fitted on 342 clean windows from 6 separate commissioning trucks
+[DATA] 2328 train / 582 validation windows; group overlap=0
+[DATA] validation trucks=[5, 6]
+
+FullName
+--------
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\assignment_dataset.npz
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy
+
+
+[PASS] Task 3 grouped dataset and statistics generated
+
+========================================================================================
+Task 4 - Train M1 FP32 Model
+========================================================================================
+[STEP] Train M1 FP32 model
+[TRAIN] train trucks=[0, 1, 2, 3, 4, 7, 8, 9]; validation trucks=[5, 6]; overlap=0
+[TRAIN] train windows=2328; validation windows=582
+Epoch 1/160
+73/73 - 0s - 6ms/step - accuracy: 0.8037 - loss: 0.5257 - val_accuracy: 0.9519 - val_loss: 0.2473 - learning_rate: 0.0010
+Epoch 2/160
+73/73 - 0s - 1ms/step - accuracy: 0.9832 - loss: 0.1556 - val_accuracy: 0.9931 - val_loss: 0.0938 - learning_rate: 0.0010
+Epoch 3/160
+73/73 - 0s - 1ms/step - accuracy: 0.9893 - loss: 0.0898 - val_accuracy: 0.9931 - val_loss: 0.0555 - learning_rate: 0.0010
+Epoch 4/160
+73/73 - 0s - 1ms/step - accuracy: 0.9901 - loss: 0.0657 - val_accuracy: 0.9931 - val_loss: 0.0419 - learning_rate: 0.0010
+Epoch 5/160
+73/73 - 0s - 1ms/step - accuracy: 0.9901 - loss: 0.0551 - val_accuracy: 0.9931 - val_loss: 0.0363 - learning_rate: 0.0010
+Epoch 6/160
+73/73 - 0s - 1ms/step - accuracy: 0.9905 - loss: 0.0493 - val_accuracy: 0.9931 - val_loss: 0.0335 - learning_rate: 0.0010
+Epoch 7/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
+Epoch 8/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0433 - val_accuracy: 0.9931 - val_loss: 0.0308 - learning_rate: 0.0010
+Epoch 9/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0415 - val_accuracy: 0.9931 - val_loss: 0.0301 - learning_rate: 0.0010
+Epoch 10/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0400 - val_accuracy: 0.9931 - val_loss: 0.0297 - learning_rate: 0.0010
+Epoch 11/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0388 - val_accuracy: 0.9948 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 12/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0376 - val_accuracy: 0.9948 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 13/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 14/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0357 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 15/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0349 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 16/160
+73/73 - 0s - 1ms/step - accuracy: 0.9914 - loss: 0.0341 - val_accuracy: 0.9931 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 17/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0333 - val_accuracy: 0.9931 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 18/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0326 - val_accuracy: 0.9931 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 19/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0320 - val_accuracy: 0.9931 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 20/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0314 - val_accuracy: 0.9931 - val_loss: 0.0295 - learning_rate: 0.0010
+Epoch 21/160
+73/73 - 0s - 1ms/step - accuracy: 0.9923 - loss: 0.0308 - val_accuracy: 0.9931 - val_loss: 0.0295 - learning_rate: 0.0010
+Epoch 22/160
+73/73 - 0s - 1ms/step - accuracy: 0.9927 - loss: 0.0301 - val_accuracy: 0.9931 - val_loss: 0.0297 - learning_rate: 0.0010
+Epoch 23/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0295 - val_accuracy: 0.9931 - val_loss: 0.0298 - learning_rate: 0.0010
+Epoch 24/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0290 - val_accuracy: 0.9931 - val_loss: 0.0301 - learning_rate: 0.0010
+Epoch 25/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0285 - val_accuracy: 0.9931 - val_loss: 0.0302 - learning_rate: 0.0010
+Epoch 26/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0276 - val_accuracy: 0.9931 - val_loss: 0.0303 - learning_rate: 5.0000e-04
+Epoch 27/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0272 - val_accuracy: 0.9914 - val_loss: 0.0304 - learning_rate: 5.0000e-04
+Epoch 28/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0270 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+Epoch 29/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+Epoch 30/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0264 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 31/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0263 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 32/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0260 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
+Epoch 33/160
+73/73 - 0s - 1ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 34/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0255 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
+Epoch 35/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0253 - val_accuracy: 0.9914 - val_loss: 0.0312 - learning_rate: 5.0000e-04
+Epoch 36/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0251 - val_accuracy: 0.9914 - val_loss: 0.0313 - learning_rate: 5.0000e-04
+Epoch 37/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0249 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 5.0000e-04
+Epoch 38/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0244 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 2.5000e-04
+Epoch 39/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0243 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 2.5000e-04
+Epoch 40/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0242 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
+Epoch 41/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0241 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
+Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmp0cvnyg_g'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 6), dtype=tf.float32, name='features')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  1622581551440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1622581552400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1622581552592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1622581551248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1622581552784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1622581552016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+[SAVE] Keras model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.keras
+[SAVE] TFLite model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
+[SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_metrics.json
+[TRAIN] grouped validation accuracy=99.48%
+[TRAIN] recall Normal=100.0% Warning=98.8% Critical=99.4%
+[TRAIN] precision Normal=99.2% Warning=99.4% Critical=100.0%
+[PASS] grouped validation accuracy gate cleared
+[PASS] Task 4 M1 training completed
+
+========================================================================================
+Task 5 - Validate Accuracy Above 88 Percent
+========================================================================================
+Grouped validation accuracy: 99.48%
+[PASS] Task 5 validation accuracy passed: 99.48%
+
+========================================================================================
+Task 6 - Generate M2 PTQ INT8 Model
+========================================================================================
+[STEP] Generate M2 PTQ INT8 model
+[SAVE] INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+[SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_metrics.json
+[PTQ] size=4.46 KB; grouped validation accuracy=99.31%
+[PTQ] recall Normal=100.0% Warning=98.1% Critical=99.4%
+[PASS] M2 full-INT8 PTQ conversion completed
+[SAVE] INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+[SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_metrics.json
+[PTQ] size=4.46 KB; grouped validation accuracy=99.31%
+[PTQ] recall Normal=100.0% Warning=98.1% Critical=99.4%
+[PASS] M2 full-INT8 PTQ conversion completed
+[PASS] M2 PTQ INT8 model found: m2_ptq_int8.tflite
+
+========================================================================================
+Task 7 - Generate M3 Pruned INT8 Model
+========================================================================================
+[STEP] Generate M3 pruned INT8 model
+[PRUNE] training trucks=[0, 1, 2, 3, 4, 7, 8, 9]; validation trucks=[5, 6]; overlap=0
+[PRUNE] training windows=2328; validation windows=582
+[PRUNE] d1 unstructured sparsity=34.9%
+[PRUNE] d2 unstructured sparsity=35.0%
+[PRUNE] combined hidden-kernel sparsity=34.94%
+[PRUNE] structural d1 32 -> 21; d2 16 -> 10
+[PRUNE] INT8 calibration distribution: class 0=108, class 1=71, class 2=71
+[SAVE] compact FP32 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_fp32.keras
+[SAVE] compact INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[SAVE] M3 metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_metrics.json
+[SAVE] optimisation metadata: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\model_optimisation_metadata.json
+[PRUNE] params=400; reduction=50.2%; size=3.63 KB; grouped validation accuracy=99.14%
+[PRUNE] recall Normal=99.6% Warning=98.1% Critical=99.4%
+[PASS] M3 pruning and INT8 quantisation completed
+[PRUNE] training trucks=[0, 1, 2, 3, 4, 7, 8, 9]; validation trucks=[5, 6]; overlap=0
+[PRUNE] training windows=2328; validation windows=582
+[PRUNE] d1 unstructured sparsity=34.9%
+[PRUNE] d2 unstructured sparsity=35.0%
+[PRUNE] combined hidden-kernel sparsity=34.94%
+[PRUNE] structural d1 32 -> 21; d2 16 -> 10
+[PRUNE] INT8 calibration distribution: class 0=108, class 1=71, class 2=71
+[SAVE] compact FP32 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_fp32.keras
+[SAVE] compact INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[SAVE] M3 metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_metrics.json
+[SAVE] optimisation metadata: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\model_optimisation_metadata.json
+[PRUNE] params=400; reduction=50.2%; size=3.63 KB; grouped validation accuracy=99.14%
+[PRUNE] recall Normal=99.6% Warning=98.1% Critical=99.4%
+[PASS] M3 pruning and INT8 quantisation completed
+[PASS] M3 pruned INT8 model found: m3_pruned_int8.tflite
+
+========================================================================================
+Task 8 - Run and Validate Normalization Experiment
+========================================================================================
+[STEP] Run normalization sensitivity experiment
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[NORM] Loading dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[NORM] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[NORM] Using grouped validation split: X_raw, y, val_idx
+[NORM] Loading frozen statistics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy
+[NORM] Frozen mean: [ 4.199489,  0.1237  , -0.006027,  0.449942,  0.481157, -0.76394 ]
+[NORM] Frozen std : [0.180327, 0.030614, 0.383132, 0.019348, 0.024526, 0.548218]
+[NORM] Held-out validation shape: X=(582, 6), y=(582,)
+[NORM] Validation class distribution: 0=248, 1=160, 2=174
+[NORM] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[NORM] Input tensor: shape=(1, 6), dtype=int8, scale=0.24223273992538452, zero_point=-112
+[NORM] Output tensor: dtype=int8, scale=0.00390625, zero_point=-128
+
+========================================================================
+NORMALISATION SENSITIVITY EXPERIMENT
+========================================================================
+Correct statistics: accuracy=99.14%, Critical recall=99.43%
+Shifted mean (+3 sigma): accuracy=99.14%, Critical recall=100.00%
+Accuracy change: +0.00 percentage points
+Critical recall change: +0.57 percentage points
+
+Correct-statistics confusion matrix:
+[[247   0   1]
+ [  2 157   1]
+ [  0   1 173]]
+
+Shifted-3sigma confusion matrix:
+[[248   0   0]
+ [  4 155   1]
+ [  0   0 174]]
+
+CSV saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_experiment.csv
+Confusion matrices saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_confusion_matrices.npz
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[NORM] Loading dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[NORM] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[NORM] Using grouped validation split: X_raw, y, val_idx
+[NORM] Loading frozen statistics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy
+[NORM] Frozen mean: [ 4.199489,  0.1237  , -0.006027,  0.449942,  0.481157, -0.76394 ]
+[NORM] Frozen std : [0.180327, 0.030614, 0.383132, 0.019348, 0.024526, 0.548218]
+[NORM] Held-out validation shape: X=(582, 6), y=(582,)
+[NORM] Validation class distribution: 0=248, 1=160, 2=174
+[NORM] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+[NORM] Input tensor: shape=(1, 6), dtype=int8, scale=0.24223273992538452, zero_point=-112
+[NORM] Output tensor: dtype=int8, scale=0.00390625, zero_point=-128
+
+========================================================================
+NORMALISATION SENSITIVITY EXPERIMENT
+========================================================================
+Correct statistics: accuracy=99.14%, Critical recall=99.43%
+Shifted mean (+3 sigma): accuracy=99.14%, Critical recall=100.00%
+Accuracy change: +0.00 percentage points
+Critical recall change: +0.57 percentage points
+
+Correct-statistics confusion matrix:
+[[247   0   1]
+ [  2 157   1]
+ [  0   1 173]]
+
+Shifted-3sigma confusion matrix:
+[[248   0   0]
+ [  4 155   1]
+ [  0   0 174]]
+
+CSV saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_experiment.csv
+Confusion matrices saved to: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_confusion_matrices.npz
+
+Normalization experiment results:
+
+condition      accuracy_pct recall_critical_pct
+---------      ------------ -------------------
+correct_stats  99.1409      99.4253
+shifted_3sigma 99.1409      100.0
+
+
+Correct-stats accuracy  : 99.14%
+Shifted-3sigma accuracy : 99.14%
+Accuracy change         : 0.00 points
+Correct Critical recall : 99.43%
+Shifted Critical recall : 100.00%
+Critical recall change  : +0.57 points
+[PASS] Task 8 correct and shifted normalization results validated
+
+========================================================================================
+Task 9 - Run Model Benchmark
+========================================================================================
+[STEP] Benchmark M1, M2 and M3
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[BENCH] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[BENCH] Dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[BENCH] Validation shape: X=(582, 6), y=(582,)
+[BENCH] Laptop TDP assumption: 45.00 W
+
+========================================================================
+[BENCH] M1_FP32
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
+========================================================================
+[BENCH] size=5.19 KB
+[BENCH] accuracy=99.48%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0027 ms mean, 0.0032 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M2_PTQ_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+========================================================================
+[BENCH] size=4.46 KB
+[BENCH] accuracy=99.31%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0081 ms mean, 0.0097 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M3_PRUNE35_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+========================================================================
+[BENCH] size=3.63 KB
+[BENCH] accuracy=99.14%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0083 ms mean, 0.0105 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+[PARETO] Frontier validation
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002690 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008063 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008328 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] recommended=M1_FP32
+[PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+
+========================================================================
+BENCHMARK COMPLETE
+========================================================================
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0027 ms, p95=0.0032 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0097 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0083 ms, p95=0.0105 ms, size=3.63 KB, energy=0.000000 mJ
+
+Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
+Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+Pareto chart: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_chart.png
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+[BENCH] Dataset keys: X_raw, fault_onset_s, group_id, mode, run_id, split_method, split_seed, train_idx, truck_id, val_idx, validation_fraction, window_end_s, y
+[BENCH] Dataset: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\dataset.npz
+[BENCH] Validation shape: X=(582, 6), y=(582,)
+[BENCH] Laptop TDP assumption: 45.00 W
+
+========================================================================
+[BENCH] M1_FP32
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
+========================================================================
+[BENCH] size=5.19 KB
+[BENCH] accuracy=99.48%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0027 ms mean, 0.0032 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M2_PTQ_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+========================================================================
+[BENCH] size=4.46 KB
+[BENCH] accuracy=99.31%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0081 ms mean, 0.0097 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+========================================================================
+[BENCH] M3_PRUNE35_INT8
+[BENCH] Model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+========================================================================
+[BENCH] size=3.63 KB
+[BENCH] accuracy=99.14%
+[BENCH] Critical recall=99.43%
+[BENCH] latency=0.0083 ms mean, 0.0105 ms p95
+[BENCH] methodology=10 warm-ups, 200 measured runs
+[BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
+
+[PARETO] Frontier validation
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002690 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008063 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008328 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] recommended=M1_FP32
+[PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+
+========================================================================
+BENCHMARK COMPLETE
+========================================================================
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0027 ms, p95=0.0032 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0097 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0083 ms, p95=0.0105 ms, size=3.63 KB, energy=0.000000 mJ
+
+Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
+Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
+Pareto chart: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_chart.png
+[PASS] Task 9 benchmark outputs generated
+
+========================================================================================
+Task 10 - Validate Benchmark Methodology and Results
+========================================================================================
+[PASS] Benchmark used 10 warm-ups and 200 measured runs for all variants
+
+variant         size_kb accuracy_pct recall_critical_pct mean_latency_ms p95_latency_ms energy_mj_per_inference warmup_runs measured_runs estimated_power_w laptop_tdp_w
+-------         ------- ------------ ------------------- --------------- -------------- ----------------------- ----------- ------------- ----------------- ------------
+M1_FP32         5.1875  99.4845      99.4253             0.00269         0.0032         0.0                     10          200           0.0               45.0
+M2_PTQ_INT8     4.4609  99.3127      99.4253             0.008063        0.009705       0.0                     10          200           0.0               45.0
+M3_PRUNE35_INT8 3.6328  99.1409      99.4253             0.008328        0.0105         0.0                     10          200           0.0               45.0
+
+
+
+variant         accuracy_pct mean_latency_ms size_kb pareto_optimal recommended
+-------         ------------ --------------- ------- -------------- -----------
+M1_FP32         99.4845      0.00269         5.1875  True           True
+M2_PTQ_INT8     99.3127      0.008063        4.4609  True           False
+M3_PRUNE35_INT8 99.1409      0.008328        3.6328  True           False
+
+
+[PASS] Task 10 validated benchmark methodology and Pareto frontier
+[PASS] Model optimisation metadata validated
+
+========================================================================================
+Task 11 - Validate M3 Critical Recall
+========================================================================================
+
+
+variant                 : M3_PRUNE35_INT8
+size_kb                 : 3.6328
+accuracy_pct            : 99.1409
+recall_critical_pct     : 99.4253
+mean_latency_ms         : 0.008328
+p95_latency_ms          : 0.0105
+energy_mj_per_inference : 0.0
+warmup_runs             : 10
+measured_runs           : 200
+estimated_power_w       : 0.0
+laptop_tdp_w            : 45.0
+cpu_percent             : 0.0
+
+
+
+M3 critical recall: 99.43%
+[PASS] Task 11 M3 critical recall passed: 99.43%
+
+========================================================================================
+Task 12 - Generate PSI Reference Distribution
+========================================================================================
+[STEP] Generate PSI reference distribution
+[REF] 300 clean Normal-condition windows from 10 trucks
+[REF] output: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\reference_dist.json
+  [0,0.25)       0.7%
+  [0.25,0.50)    0.5%
+  [0.50,0.75)    2.7%  #
+  [0.75,1.0]    96.2%  ################################################
+[REF] Normal-class share 99.3%
+[REF] mean normal_prob: 0.9511
+[PASS] PSI reference distribution created
+[REF] 300 clean Normal-condition windows from 10 trucks
+[REF] output: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\reference_dist.json
+  [0,0.25)       0.7%
+  [0.25,0.50)    0.5%
+  [0.50,0.75)    2.7%  #
+  [0.75,1.0]    96.2%  ################################################
+[REF] Normal-class share 99.3%
+[REF] mean normal_prob: 0.9511
+[PASS] PSI reference distribution created
+[PASS] Task 12 PSI reference generated
+
+========================================================================================
+Task 13 - Run PSI Drift and Recovery Simulation
+========================================================================================
+[STEP] Run PSI drift and recovery simulation
+
+[SIM] phases: clean 25 min -> combined anomaly 10 min -> clean 25 min
+[SIM] score=normal_prob; PSI reported every simulated 60 seconds
+
+--- phase CLEAN (anomaly=none) ---
+[PSI] filling rolling window 1/100
+[PSI] filling rolling window 7/100
+[PSI] filling rolling window 13/100
+[PSI] filling rolling window 19/100
+[PSI] filling rolling window 25/100
+[PSI] filling rolling window 28/100
+[PSI] filling rolling window 34/100
+[PSI] filling rolling window 40/100
+[PSI] filling rolling window 46/100
+[PSI] filling rolling window 52/100
+[PSI] filling rolling window 55/100
+[PSI] filling rolling window 61/100
+[PSI] filling rolling window 67/100
+[PSI] filling rolling window 73/100
+[PSI] filling rolling window 79/100
+[PSI] filling rolling window 82/100
+[PSI] filling rolling window 88/100
+[PSI] filling rolling window 94/100
+[PSI] CLEAN      PSI=0.004  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=95.5%
+[PSI] CLEAN      PSI=0.004  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=95.5%
+[PSI] CLEAN      PSI=0.004  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=95.5%
+[PSI] CLEAN      PSI=0.004  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=95.5%
+[PSI] CLEAN      PSI=0.004  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=95.5%
+[PSI] CLEAN      PSI=0.006  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=96.5%
+[PSI] CLEAN      PSI=0.006  critical_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=96.5%
+--- phase INJECTED (anomaly=combined) ---
+[PSI] INJECTED   PSI=0.007  critical_share=  1.0%  [0,0.25)= 1.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=96.0%
+[PSI] INJECTED   PSI=0.159  critical_share=  7.0%  [0,0.25)= 7.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=90.0%
+[PSI] INJECTED   PSI=0.388  critical_share= 13.0%  [0,0.25)=13.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=84.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.388
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] INJECTED   PSI=0.658  critical_share= 19.0%  [0,0.25)=19.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=78.0%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] INJECTED   PSI=0.958  critical_share= 25.0%  [0,0.25)=25.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=72.0%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] INJECTED   PSI=1.118  critical_share= 28.0%  [0,0.25)=28.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=69.0%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] INJECTED   PSI=1.457  critical_share= 34.0%  [0,0.25)=34.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=63.0%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] INJECTED   PSI=1.821  critical_share= 40.0%  [0,0.25)=40.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=57.0%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] INJECTED   PSI=2.183  critical_share= 46.0%  [0,0.25)=45.5% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=53.5%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] INJECTED   PSI=2.589  critical_share= 52.0%  [0,0.25)=51.5% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=47.5%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+--- phase RECOVERED (anomaly=none) ---
+[PSI] RECOVERED  PSI=2.730  critical_share= 54.0%  [0,0.25)=53.5% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=45.5%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.730  critical_share= 54.0%  [0,0.25)=53.5% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=45.5%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.812  critical_share= 54.0%  [0,0.25)=54.7% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=43.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.387  critical_share= 48.0%  [0,0.25)=48.8% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=49.8%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=2.186  critical_share= 45.0%  [0,0.25)=45.8% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=52.7%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=1.802  critical_share= 39.0%  [0,0.25)=39.8% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=58.7%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=1.444  critical_share= 33.0%  [0,0.25)=33.8% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=64.7%
+   classification: REAL CONCEPT DRIFT / FAULT PRESENT
+[PSI] RECOVERED  PSI=1.111  critical_share= 27.0%  [0,0.25)=27.9% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=70.6%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] RECOVERED  PSI=0.802  critical_share= 21.0%  [0,0.25)=21.9% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=76.6%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] RECOVERED  PSI=0.658  critical_share= 18.0%  [0,0.25)=18.9% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=79.6%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] RECOVERED  PSI=0.393  critical_share= 12.0%  [0,0.25)=12.9% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=85.6%
+   classification: DATA OR SENSOR DRIFT / INVESTIGATE PROBE
+[PSI] RECOVERED  PSI=0.224  critical_share=  6.0%  [0,0.25)= 9.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=88.6%
+[PSI] RECOVERED  PSI=0.037  critical_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=94.5%
+[LOGIBRIDGE] drift cleared: PSI=0.037 < 0.10
+[PSI] RECOVERED  PSI=0.037  critical_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=94.5%
+[PSI] RECOVERED  PSI=0.037  critical_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=94.5%
+[PSI] RECOVERED  PSI=0.031  critical_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=96.5%
+[PSI] RECOVERED  PSI=0.031  critical_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=96.5%
+[PSI] RECOVERED  PSI=0.031  critical_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=96.5%
+[PSI] RECOVERED  PSI=0.031  critical_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=96.5%
+
+=========== PSI SUMMARY ===========
+  clean maximum PSI: 0.006
+  injected maximum PSI: 2.589
+  PSI 0.25 detection lag: 3.0 min (PASS; requirement less than or equal to 5 min)
+  recovered final PSI: 0.031 (PASS; required below 0.10)
+  trace output: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\psi_trace.json
+  metadata output: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\psi_metadata.json
+[PASS] PSI simulation completed
+[PASS] Task 13 PSI simulation completed
+
+========================================================================================
+Task 14 - Validate PSI Thresholds
+========================================================================================
+Injected maximum PSI: 2.589
+Recovered final PSI: 0.031
+[PASS] Task 14 PSI thresholds, timing and configuration validated
+
+========================================================================================
+Task 15 - Run Automated Tests
+========================================================================================
+[STEP] Run preprocessing contract tests
+..........                                                               [100%]
+..........                                                               [100%]
+[STEP] Run complete automated pytest suite
+................                                                         [100%]
+................                                                         [100%]
+[PASS] Task 15 preprocessing contract and complete pytest suite passed
+
+========================================================================================
+Task 16 - Generate Diagrams and Calculations
+========================================================================================
+[STEP] Generate architecture diagrams
+wrote scenario_architecture/system_architecture.png
+wrote data_pipeline/mqtt_topic_tree.png
+wrote scenario_architecture/system_architecture.png
+wrote data_pipeline/mqtt_topic_tree.png
+[STEP] Generate report evidence figures
+Normalisation experiment columns: ['accuracy_change_points', 'accuracy_pct', 'condition', 'critical_recall_change_points', 'mean_shift_sigma', 'recall_critical_pct', 'validation_samples']
+Wrote figures to C:\LogiEdge\LogiEdge_Complete_Assignment_Package\reports\figures
+Normalisation experiment columns: ['accuracy_change_points', 'accuracy_pct', 'condition', 'critical_recall_change_points', 'mean_shift_sigma', 'recall_critical_pct', 'validation_samples']
+Wrote figures to C:\LogiEdge\LogiEdge_Complete_Assignment_Package\reports\figures
+[STEP] Generate constraint calculations
+=== A1 BANDWIDTH ===
+raw per truck/day      : 518.7 MB   (temp 4 B/s + vib 6000 B/s)
+raw cost/truck/day     : Rs 51.87
+raw cost 85 trucks/yr  : Rs 1,609,409
+raw cost 265 trucks/yr : Rs 5,017,568
+edge per truck/day     : 63.6 KB
+edge cost 85 trucks/yr : Rs 197
+reduction factor       : 8,156x (99.9877% less data)
+JSON-over-MQTT reality : ~3x the raw figure (1,556 MB/day) if published un-reduced
+
+=== B2 ARITHMETIC INTENSITY / ROOFLINE ===
+Model operations: 45 MFLOPs
+Data movement: 18 MB
+Arithmetic Intensity: 2.500 FLOP/byte
+Ridge Point: 1.333 FLOP/byte
+Classification: compute-bound
+Attainable performance: 16.000 GFLOP/s
+Compute latency estimate: 2.812 ms
+Memory latency estimate: 1.500 ms
+Roofline latency estimate: 2.812 ms
+Latency margin versus 90 s SLA: 32,000x
+
+=== E3 OTA per update cycle (spec 280 KB, 85 trucks) ===
+  full replacement :   23.242 MB   Rs    2.324
+  canary 10 -> 75  :   23.242 MB   Rs    2.324 (same bytes, staged)
+  shadow mode      :    228.9 MB   Rs    22.89 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 20.22 | canary Rs 20.22 | shadow Rs 199.12
+=== E3 OTA per update cycle (actual M3, 85 trucks) ===
+  full replacement :    0.313 MB   Rs    0.031
+  canary 10 -> 75  :    0.313 MB   Rs    0.031 (same bytes, staged)
+  shadow mode      :    205.9 MB   Rs    20.59 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 0.27 | canary Rs 0.27 | shadow Rs 179.17
+
+  -> The three strategies differ by rupees. The decision is therefore not financial:
+     one bad model x 85 trucks x Rs 28 lakh cargo dwarfs the entire OTA budget.
+
+=== D2 DOCKER LAYER CACHE (85 trucks) ===
+  naive full image  :  12750.0 MB   Rs  1275.00
+  cached model layer:   0.313 MB   Rs   0.0313
+  saving            :  12749.7 MB   Rs  1274.97   (99.998% less)
+  per truck         : 150 MB -> 3.8 KB
+=== A1 BANDWIDTH ===
+raw per truck/day      : 518.7 MB   (temp 4 B/s + vib 6000 B/s)
+raw cost/truck/day     : Rs 51.87
+raw cost 85 trucks/yr  : Rs 1,609,409
+raw cost 265 trucks/yr : Rs 5,017,568
+edge per truck/day     : 63.6 KB
+edge cost 85 trucks/yr : Rs 197
+reduction factor       : 8,156x (99.9877% less data)
+JSON-over-MQTT reality : ~3x the raw figure (1,556 MB/day) if published un-reduced
+
+=== B2 ARITHMETIC INTENSITY / ROOFLINE ===
+Model operations: 45 MFLOPs
+Data movement: 18 MB
+Arithmetic Intensity: 2.500 FLOP/byte
+Ridge Point: 1.333 FLOP/byte
+Classification: compute-bound
+Attainable performance: 16.000 GFLOP/s
+Compute latency estimate: 2.812 ms
+Memory latency estimate: 1.500 ms
+Roofline latency estimate: 2.812 ms
+Latency margin versus 90 s SLA: 32,000x
+
+=== E3 OTA per update cycle (spec 280 KB, 85 trucks) ===
+  full replacement :   23.242 MB   Rs    2.324
+  canary 10 -> 75  :   23.242 MB   Rs    2.324 (same bytes, staged)
+  shadow mode      :    228.9 MB   Rs    22.89 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 20.22 | canary Rs 20.22 | shadow Rs 199.12
+=== E3 OTA per update cycle (actual M3, 85 trucks) ===
+  full replacement :    0.313 MB   Rs    0.031
+  canary 10 -> 75  :    0.313 MB   Rs    0.031 (same bytes, staged)
+  shadow mode      :    205.9 MB   Rs    20.59 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 0.27 | canary Rs 0.27 | shadow Rs 179.17
+
+  -> The three strategies differ by rupees. The decision is therefore not financial:
+     one bad model x 85 trucks x Rs 28 lakh cargo dwarfs the entire OTA budget.
+
+=== D2 DOCKER LAYER CACHE (85 trucks) ===
+  naive full image  :  12750.0 MB   Rs  1275.00
+  cached model layer:   0.313 MB   Rs   0.0313
+  saving            :  12749.7 MB   Rs  1274.97   (99.998% less)
+  per truck         : 150 MB -> 3.8 KB
+[PASS] Task 16 diagrams, figures and calculations generated
+
+========================================================================================
+Task 17 - Prepare Inference Context and Runtime Environment
+========================================================================================
+[PASS] Step 17.1 copied preprocessing.py into the inference context
+[PASS] Step 17.2 copied tflite_eval.py into the inference context
+[PASS] Step 17.3 copied M3 model to C:\LogiEdge\runtime\model.tflite
+[PASS] Step 17.4 copied training statistics
+[PASS] Step 17.5 copied PSI reference distribution
+[PASS] Step 17.6 removed old runtime database
+[PASS] Step 17.7 validated Paho MQTT v2 callback compatibility
+
+========================================================================================
+Validate Dockerfile Contract
+========================================================================================
+[PASS] Dockerfile base image, MODEL_PATH and layer order validated
+
+========================================================================================
+Task 18 - Build Cached Baseline Docker Image v1
+========================================================================================
+[STEP] Build cached baseline image logibridge/inference:v1
+
+0
+[STEP] Verify logibridge/inference:v1
+
+0
+[PASS] Docker baseline image logibridge/inference:v1 is available
+
+========================================================================================
+Task 19 - OTA Model-Only Layer Cache Test
+========================================================================================
+Baseline model hash: 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
+OTA model hash     : B688C47DC96D9A5995E3BC8836F864D88863FF7AAA148A5AB195ECF03382E8D1
+[STEP] Build OTA image using Docker layer cache
+#0 building with "desktop-linux" instance using docker driver
+System.Management.Automation.RemoteException
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.21kB done
+#1 DONE 0.0s
+System.Management.Automation.RemoteException
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.4s
+System.Management.Automation.RemoteException
+#3 [internal] load .dockerignore
+#3 transferring context: 70B done
+#3 DONE 0.0s
+System.Management.Automation.RemoteException
+#4 [internal] load build context
+#4 transferring context: 4.04kB done
+#4 DONE 0.0s
+System.Management.Automation.RemoteException
+#5 [ 1/12] FROM docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93
+#5 resolve docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93 0.0s done
+#5 DONE 0.0s
+System.Management.Automation.RemoteException
+#6 [ 3/12] COPY requirements.txt /app/requirements.txt
+#6 CACHED
+System.Management.Automation.RemoteException
+#7 [ 8/12] COPY inference_service.py /app/inference_service.py
+#7 CACHED
+System.Management.Automation.RemoteException
+#8 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
+#8 CACHED
+System.Management.Automation.RemoteException
+#9 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
+#9 CACHED
+System.Management.Automation.RemoteException
+#10 [10/12] COPY training_stats.npy /data/training_stats.npy
+#10 CACHED
+System.Management.Automation.RemoteException
+#11 [ 2/12] WORKDIR /app
+#11 CACHED
+System.Management.Automation.RemoteException
+#12 [ 9/12] RUN mkdir -p /data
+#12 CACHED
+System.Management.Automation.RemoteException
+#13 [ 5/12] COPY preprocessing.py /app/preprocessing.py
+#13 CACHED
+System.Management.Automation.RemoteException
+#14 [ 7/12] COPY psi.py /app/psi.py
+#14 CACHED
+System.Management.Automation.RemoteException
+#15 [11/12] COPY reference_dist.json /data/reference_dist.json
+#15 CACHED
+System.Management.Automation.RemoteException
+#16 [12/12] COPY model.tflite /data/model.tflite
+#16 CACHED
+System.Management.Automation.RemoteException
+#17 exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:30adaa4229290c95ad83ab71c59a2bf580deac2f53f104c0e2e02c4b93961c0e done
+#17 exporting config sha256:905720d9667a85c7dddf5a431e99843690a0e6b3d67fe1a96fb5179dd96d4904 done
+#17 exporting attestation manifest sha256:f2278ba0826faf4bdd078a3c90a20fbe8f51ca70604a6443edd387a8fc174220 0.0s done
+#17 exporting manifest list sha256:712fda61496c8da55c1a5fa68ca395302762fbf7254d679543ec54c342831d10 done
+#17 naming to docker.io/logibridge/inference:ota-model-only done
+#17 unpacking to docker.io/logibridge/inference:ota-model-only done
+#17 DONE 0.1s
+System.Management.Automation.RemoteException
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/l1upa0ic2jxkadaxuf751ybat
+[STEP] Verify OTA image
+
+0
+Baseline model hash: 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
+OTA model hash     : B688C47DC96D9A5995E3BC8836F864D88863FF7AAA148A5AB195ECF03382E8D1
+Full image size       : 80.99 MB
+Model size            : 0.0036 MB
+85-truck full cost    : INR 688.38
+85-truck model cost   : INR 0.03
+Bandwidth saving      : 99.996%
+[PASS] OTA model hash changed and Docker cache was reused
+Restored model hash : 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
+Expected model hash : 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
+[PASS] Baseline model restored after OTA cache test
+
+========================================================================================
+Task 20 - Start Docker Compose MQTT Brokers
+========================================================================================
+[STEP] Stop previous Compose stack
+
+0
+[STEP] Start MQTT brokers
+
+0
+[STEP] Display Compose services
+
+0
+[PASS] Container 'logiedge-local-broker' is running; health=none
+[PASS] Container 'logiedge-uplink-broker' is running; health=none
+[PASS] Local and uplink MQTT brokers are running
+
+========================================================================================
+Task 21 - Start Inference Container
+========================================================================================
+[INFO] Removing existing inference container: logibridge-inference
+[STEP] Run inference service container
+
+0
+[PASS] Container 'logibridge-inference' is running; health=healthy
+[PASS] Inference container MODEL_PATH validated
+[STEP] Display inference service startup logs
+
+0
+C:\LogiEdge\runtime -> /data
+[PASS] Inference container is running with /data mounted from C:\LogiEdge\runtime
+
+========================================================================================
+Task 22 - MQTT Monitor Command
+========================================================================================
+Open a second PowerShell window and run:
+
+docker exec -it logiedge-local-broker mosquitto_sub -h localhost -p 1883 -t "logibridge/#" -v
+
+The automated pipeline continues without opening an interactive subscriber.
+[PASS] Correct MQTT monitor command prepared
+
+========================================================================================
+Task 23 - Publish Simulation
+========================================================================================
+[INFO] Simulator: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\simulator.py
+[STEP] Inspect simulator command-line options
+usage: simulator.py [-h] [--anomaly {none,temp_drift,vibration,combined}]
+                    [--duration DURATION] [--truck-id TRUCK_ID]
+                    [--speed SPEED] [--host HOST] [--port PORT] [--seed SEED]
+                    [--onset ONSET] [--force-door-cycle] [--offline]
+                    [--out OUT]
+
+LogiEdge cold-chain sensor simulator
+
+options:
+  -h, --help            show this help message and exit
+  --anomaly {none,temp_drift,vibration,combined}
+  --duration DURATION   simulated seconds to generate
+  --truck-id TRUCK_ID
+  --speed SPEED         wall-clock acceleration (1.0 = real time)
+  --host HOST
+  --port PORT
+  --seed SEED
+  --onset ONSET         seconds before the fault begins (default: random
+                        0-120)
+  --force-door-cycle    emit a deterministic OPEN event at 2 s and CLOSE event
+                        at 7 s
+  --offline             no broker; emit samples as fast as possible
+  --out OUT             CSV path for --offline
+[STEP] Publish simulated sensor data for truck TRK-01
+
+0
+True
+[PASS] Required inference MQTT topic validated
+[STEP] Inspect inference logs after simulation
+
+0
+[PASS] Sensor simulation command completed
+
+========================================================================================
+Task 24 - Verify Database
+========================================================================================
+tables: ['inference_records', 'sqlite_sequence']
+labels: [('Critical', 5), ('Normal', 10)]
+columns: ['id', 'event_id', 'ts', 'truck_id', 'cls', 'label', 'confidence', 'probs', 'features', 'door_open', 'severity', 'alert_required', 'inference_synced', 'alert_synced']
+unsynced: 0
+[PASS] Database contains 15 inference record(s)
+
+========================================================================================
+Task 25 - Test Offline Storage
+========================================================================================
+[INFO] Records before offline test: 15
+[STEP] Stop uplink broker
+
+0
+[WAIT] Restart inference service with uplink unavailable...
+[STEP] Restart inference service and clear sensor buffers
+
+0
+[PASS] Container 'logibridge-inference' is running; health=healthy
+[STEP] Confirm offline inference service startup
+
+0
+[STEP] Inspect simulator command-line options
+usage: simulator.py [-h] [--anomaly {none,temp_drift,vibration,combined}]
+                    [--duration DURATION] [--truck-id TRUCK_ID]
+                    [--speed SPEED] [--host HOST] [--port PORT] [--seed SEED]
+                    [--onset ONSET] [--force-door-cycle] [--offline]
+                    [--out OUT]
+
+LogiEdge cold-chain sensor simulator
+
+options:
+  -h, --help            show this help message and exit
+  --anomaly {none,temp_drift,vibration,combined}
+  --duration DURATION   simulated seconds to generate
+  --truck-id TRUCK_ID
+  --speed SPEED         wall-clock acceleration (1.0 = real time)
+  --host HOST
+  --port PORT
+  --seed SEED
+  --onset ONSET         seconds before the fault begins (default: random
+                        0-120)
+  --force-door-cycle    emit a deterministic OPEN event at 2 s and CLOSE event
+                        at 7 s
+  --offline             no broker; emit samples as fast as possible
+  --out OUT             CSV path for --offline
+[STEP] Publish simulated sensor data for truck TRK-01
+
+0
+[INFO] Records before test : 15
+[INFO] Records after test  : 24
+[INFO] New offline records : 9
+[INFO] Unsynced records    : 9
+[STEP] Inspect offline inference logs
+
+0
+[PASS] Offline storage contains 9 unsynced record(s); new offline records=9
+
+========================================================================================
+Task 26 - Replay
+========================================================================================
+[PASS] Container 'logiedge-uplink-broker' is running; health=none
+[STEP] Restart inference service to reconnect uplink and replay backlog
+[STEP] Restart inference service after uplink recovery
+
+0
+[PASS] Container 'logibridge-inference' is running; health=healthy
+[STEP] Inspect replay logs
+
+0
+[PASS] Uplink replay completed and backlog returned to zero
+
+========================================================================================
+Task 27 - Local Registry
+========================================================================================
+[STEP] Start local Docker registry
+
+0
+[PASS] Container 'logibridge-registry' is running; health=none
+[STEP] Tag v1 image as registry v2
+
+0
+[STEP] Push v2 image to local registry
+
+0
+[PASS] Image pushed to localhost:5000/logibridge/inference:v2
+
+========================================================================================
+Task 28 - Verify Registry
+========================================================================================
+Repositories: logibridge/inference
+Tags: v2
+[PASS] Registry contains logibridge/inference:v2
+
+========================================================================================
+Correct Local Registry References
+========================================================================================
+[PASS] Deployment registry references use localhost:5000
+
+========================================================================================
+Task 29 - Verify Exact Ansible Contract and Syntax
+========================================================================================
+[STEP] Validate exact seven-task Ansible contract
+
+0
+[STEP] Run Ansible syntax check
+
+0
+[PASS] Ansible syntax check passed
+
+========================================================================================
+Task 30 - Run Deployment Twice
+========================================================================================
+[STEP] Run first Ansible deployment
+
+PLAY [Deploy LogiEdge inference stack to cold-chain trucks] ********************
+
+TASK [Create LogiEdge data directory if not present] ***************************
+ok: [localhost]
+
+TASK [Copy new model file to the persistent data directory] ********************
+ok: [localhost]
+
+TASK [Copy updated PSI reference and frozen normalisation statistics] **********
+changed: [localhost] => (item={'src': '../monitoring/reference_dist.json', 'dest': 'reference_dist.json'})
+ok: [localhost] => (item={'src': '../data_pipeline/training_stats.npy', 'dest': 'training_stats.npy'})
+
+TASK [Stop the running inference container when model or configuration changed] ***
+changed: [localhost]
+
+TASK [Pull updated container image from the local Docker registry] *************
+ok: [localhost]
+
+TASK [Start inference container with separate local and uplink MQTT settings] ***
+changed: [localhost]
+
+TASK [Wait up to 15 seconds and verify container is running] *******************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+[STEP] Run second Ansible deployment for idempotency
+
+PLAY [Deploy LogiEdge inference stack to cold-chain trucks] ********************
+
+TASK [Create LogiEdge data directory if not present] ***************************
+ok: [localhost]
+
+TASK [Copy new model file to the persistent data directory] ********************
+ok: [localhost]
+
+TASK [Copy updated PSI reference and frozen normalisation statistics] **********
+ok: [localhost] => (item={'src': '../monitoring/reference_dist.json', 'dest': 'reference_dist.json'})
+ok: [localhost] => (item={'src': '../data_pipeline/training_stats.npy', 'dest': 'training_stats.npy'})
+
+TASK [Stop the running inference container when model or configuration changed] ***
+skipping: [localhost]
+
+TASK [Pull updated container image from the local Docker registry] *************
+ok: [localhost]
+
+TASK [Start inference container with separate local and uplink MQTT settings] ***
+ok: [localhost]
+
+TASK [Wait up to 15 seconds and verify container is running] *******************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+[PASS] Second Ansible run is idempotent: changed=0, failed=0
+
+========================================================================================
+Task 31 - Final Verification
+========================================================================================
+[PASS] Container 'logiedge-local-broker' is running; health=none
+[PASS] Container 'logiedge-uplink-broker' is running; health=none
+[PASS] Container 'logibridge-inference' is running; health=healthy
+[PASS] Container 'logibridge-registry' is running; health=none
+[STEP] List running containers
+
+0
+[STEP] List Docker images
+
+0
+tables: ['inference_records', 'sqlite_sequence']
+labels: [('Critical', 13), ('Normal', 11)]
+columns: ['id', 'event_id', 'ts', 'truck_id', 'cls', 'label', 'confidence', 'probs', 'features', 'door_open', 'severity', 'alert_required', 'inference_synced', 'alert_synced']
+unsynced: 0
+Registry verification: {"name":"logibridge/inference","tags":["v2"]}
+[PASS] All required containers are running
+
+========================================================================================
+Task 32 - Complete Pipeline Result
+========================================================================================
+Passed checks : 56
+Warnings      : 0
+Evidence log  : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\run_all_tasks_01_32.log
+
+[SUCCESS] Tasks 1-32 completed successfully.
+**********************
+Windows PowerShell transcript end
+End time: 20260718102043
+**********************

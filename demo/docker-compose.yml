@@ -1,0 +1,15 @@
+services:
+  local-broker:
+    image: eclipse-mosquitto:2
+    container_name: logiedge-local-broker
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto-local.conf:/mosquitto/config/mosquitto.conf:ro
+  uplink-broker:
+    image: eclipse-mosquitto:2
+    container_name: logiedge-uplink-broker
+    ports:
+      - "1884:1884"
+    volumes:
+      - ./mosquitto-uplink.conf:/mosquitto/config/mosquitto.conf:ro

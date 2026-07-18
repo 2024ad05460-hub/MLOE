@@ -1,0 +1,5 @@
+# Edge runtime only - the 600 MB tensorflow wheel never ships to the truck.
+tflite-runtime==2.14.0 ; platform_machine == "aarch64" or platform_machine == "armv7l"
+ai-edge-litert==1.4.0 ; platform_machine == "x86_64"
+numpy==1.26.4
+paho-mqtt==2.1.0

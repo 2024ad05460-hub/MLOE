@@ -1,0 +1,123 @@
+
+[SIM] phases: clean 25m -> --anomaly combined 10m -> clean 25m   (score=normal_prob, PSI every simulated 60 s)
+
+--- phase CLEAN (--anomaly none) ---
+[PSI] filling rolling window 1/100
+[PSI] filling rolling window 7/100
+[PSI] filling rolling window 13/100
+[PSI] filling rolling window 19/100
+[PSI] filling rolling window 25/100
+[PSI] filling rolling window 28/100
+[PSI] filling rolling window 34/100
+[PSI] filling rolling window 40/100
+[PSI] filling rolling window 46/100
+[PSI] filling rolling window 52/100
+[PSI] filling rolling window 55/100
+[PSI] filling rolling window 61/100
+[PSI] filling rolling window 67/100
+[PSI] filling rolling window 73/100
+[PSI] filling rolling window 79/100
+[PSI] filling rolling window 82/100
+[PSI] filling rolling window 88/100
+[PSI] filling rolling window 94/100
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.008  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=97.0%
+[PSI] CLEAN      PSI=0.008  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=97.0%
+--- phase INJECTED (--anomaly combined) ---
+[PSI] INJECTED   PSI=0.009  crit_share=  1.0%  [0,0.25)= 1.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=96.0%
+[PSI] INJECTED   PSI=0.160  crit_share=  7.0%  [0,0.25)= 7.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=90.0%
+[PSI] INJECTED   PSI=0.390  crit_share= 13.0%  [0,0.25)=13.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=84.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.390
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=0.659  crit_share= 19.0%  [0,0.25)=19.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=78.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.659
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=0.958  crit_share= 25.0%  [0,0.25)=25.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=72.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.958
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=1.118  crit_share= 28.0%  [0,0.25)=28.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=69.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.118
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=1.457  crit_share= 34.0%  [0,0.25)=34.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=63.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.457
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=1.821  crit_share= 40.0%  [0,0.25)=40.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=57.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.821
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=2.206  crit_share= 46.0%  [0,0.25)=46.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=54.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.206
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=2.614  crit_share= 52.0%  [0,0.25)=52.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=48.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.614
+   -> classification: REAL CONCEPT DRIFT (fault present)
+--- phase RECOVERED (--anomaly none) ---
+[PSI] RECOVERED  PSI=2.756  crit_share= 54.0%  [0,0.25)=54.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=46.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.756
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.756  crit_share= 54.0%  [0,0.25)=54.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=46.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.756
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.399  crit_share= 48.0%  [0,0.25)=49.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=50.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.399
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.197  crit_share= 45.0%  [0,0.25)=46.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=53.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.197
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.813  crit_share= 39.0%  [0,0.25)=40.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=59.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.813
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.453  crit_share= 33.0%  [0,0.25)=34.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=65.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.453
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.119  crit_share= 27.0%  [0,0.25)=28.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=71.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.119
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.810  crit_share= 21.0%  [0,0.25)=22.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=77.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.810
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.665  crit_share= 18.0%  [0,0.25)=19.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=80.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.665
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.399  crit_share= 12.0%  [0,0.25)=13.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=86.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.399
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.226  crit_share=  6.0%  [0,0.25)= 9.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=89.0%
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[LOGIBRIDGE] drift cleared, PSI=0.039 < 0.1
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+
+=========== PSI SUMMARY (Report Section 5) ===========
+  clean      max PSI : 0.008
+  injected   max PSI : 2.614   crossed 0.25 3.0 min after injection (PASS: requirement is < 5 min)
+  recovered final PSI: 0.037   (PASS: required < 0.10)
+  trace -> monitoring/psi_trace.json

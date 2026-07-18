@@ -1,0 +1,32 @@
+{
+  "model": "m3_pruned_int8.tflite",
+  "score": "normal_prob",
+  "n_windows": 300,
+  "n_trucks": 10,
+  "bins": [
+    "[0,0.25)",
+    "[0.25,0.50)",
+    "[0.50,0.75)",
+    "[0.75,1.0]"
+  ],
+  "bin_edges": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "distribution": [
+    0.006656,
+    0.004992,
+    0.026622,
+    0.96173
+  ],
+  "class_share": {
+    "Normal": 0.9933,
+    "Warning": 0.0033,
+    "Critical": 0.0033
+  },
+  "mean_confidence": 0.9511,
+  "built_utc": "2026-07-18T03:16:32Z"
+}

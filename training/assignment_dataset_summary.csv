@@ -1,0 +1,4 @@
+class,label,simulator_mode,duration_minutes,windows,assignment_approximation
+0,Normal,none,20,117,~120
+1,Warning,temp_drift,15,87,~90
+2,Critical,combined,15,87,~90

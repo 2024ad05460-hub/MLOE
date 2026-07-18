@@ -1,0 +1,58 @@
+{
+  "variant": "M1_FP32",
+  "validation_method": "grouped_by_simulated_truck",
+  "train_groups": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+  ],
+  "validation_groups": [
+    5,
+    6
+  ],
+  "group_overlap": [],
+  "train_windows": 2328,
+  "validation_windows": 582,
+  "val_accuracy": 0.9948453903198242,
+  "val_loss": 0.029395772144198418,
+  "recall": {
+    "Normal": 1.0,
+    "Warning": 0.9875,
+    "Critical": 0.9942528735632183
+  },
+  "precision": {
+    "Normal": 0.992,
+    "Warning": 0.9937106918238994,
+    "Critical": 1.0
+  },
+  "confusion": [
+    [
+      248,
+      0,
+      0
+    ],
+    [
+      2,
+      158,
+      0
+    ],
+    [
+      0,
+      1,
+      173
+    ]
+  ],
+  "params": 803,
+  "tflite_bytes": 5312,
+  "epochs_requested": 160,
+  "epochs_completed": 41,
+  "batch_size": 32,
+  "random_seed": 42,
+  "accuracy_gate": 0.88,
+  "accuracy_gate_passed": true
+}

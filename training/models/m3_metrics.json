@@ -1,0 +1,67 @@
+{
+  "variant": "M3_PRUNE35_INT8",
+  "validation_method": "grouped_by_simulated_truck",
+  "train_groups": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    8,
+    9
+  ],
+  "validation_groups": [
+    5,
+    6
+  ],
+  "group_overlap": [],
+  "training_windows": 2328,
+  "validation_windows": 582,
+  "target_unstructured_sparsity": 0.35,
+  "achieved_unstructured_sparsity": 0.3494318181818182,
+  "pruning_schedule": "PolynomialDecay",
+  "pruning_frequency": 100,
+  "structural_keep_ratio": 0.65,
+  "baseline_params": 803,
+  "params": 400,
+  "parameter_reduction": 0.50186799501868,
+  "fp32_acc_after_prune": 0.993127167224884,
+  "fp32_loss_after_prune": 0.035221733152866364,
+  "tflite_bytes": 3720,
+  "tflite_kb": 3.6328125,
+  "calibration_samples": 250,
+  "calibration_source": "training_split_stratified",
+  "calibration_seed": 42,
+  "calibration_class_counts": {
+    "0": 108,
+    "1": 71,
+    "2": 71
+  },
+  "input_type": "int8",
+  "output_type": "int8",
+  "accuracy": 0.9914089347079038,
+  "recall": {
+    "Normal": 0.9959677419354839,
+    "Warning": 0.98125,
+    "Critical": 0.9942528735632183
+  },
+  "confusion": [
+    [
+      247,
+      0,
+      1
+    ],
+    [
+      2,
+      157,
+      1
+    ],
+    [
+      0,
+      1,
+      173
+    ]
+  ],
+  "size_kb": 3.6328125
+}

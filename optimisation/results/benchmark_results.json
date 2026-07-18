@@ -1,0 +1,67 @@
+{
+  "host": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+  "logical_cpu_count": 24,
+  "tdp_w": 15.0,
+  "runs": 200,
+  "warmup": 10,
+  "repeats": 7,
+  "energy_measurement_runs": 100000,
+  "validation_groups": [
+    5,
+    6
+  ],
+  "results": [
+    {
+      "variant": "M1_FP32",
+      "description": "FP32 baseline",
+      "size_kb": 5.19,
+      "accuracy_pct": 99.48,
+      "recall_normal_pct": 100.0,
+      "recall_warning_pct": 98.8,
+      "recall_critical_pct": 99.4,
+      "mean_latency_ms": 0.00137,
+      "latency_std_across_repeats_ms": 0.00016,
+      "p95_latency_ms": 0.0015,
+      "cpu_utilisation": 1.0,
+      "power_w_est": 15.0,
+      "energy_mj_per_inference": 0.02054,
+      "repeats": 7,
+      "energy_measurement_runs": 100000
+    },
+    {
+      "variant": "M2_PTQ_INT8",
+      "description": "Full INT8 PTQ using 250 calibration samples",
+      "size_kb": 4.46,
+      "accuracy_pct": 99.31,
+      "recall_normal_pct": 100.0,
+      "recall_warning_pct": 98.1,
+      "recall_critical_pct": 99.4,
+      "mean_latency_ms": 0.00137,
+      "latency_std_across_repeats_ms": 2e-05,
+      "p95_latency_ms": 0.0015,
+      "cpu_utilisation": 1.0,
+      "power_w_est": 15.0,
+      "energy_mj_per_inference": 0.02049,
+      "repeats": 7,
+      "energy_measurement_runs": 100000
+    },
+    {
+      "variant": "M3_PRUNE35_INT8",
+      "description": "35% pruning, structural reduction and full INT8 PTQ",
+      "size_kb": 3.63,
+      "accuracy_pct": 99.14,
+      "recall_normal_pct": 99.6,
+      "recall_warning_pct": 98.1,
+      "recall_critical_pct": 99.4,
+      "mean_latency_ms": 0.00136,
+      "latency_std_across_repeats_ms": 3e-05,
+      "p95_latency_ms": 0.0014,
+      "cpu_utilisation": 1.0,
+      "power_w_est": 15.0,
+      "energy_mj_per_inference": 0.02034,
+      "repeats": 7,
+      "energy_measurement_runs": 100000
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "m2_calibration_samples": 250,
+  "m3_calibration_samples": 250,
+  "m3_target_sparsity": 0.35,
+  "m3_achieved_sparsity": 0.3494318181818182,
+  "pruning_schedule": "PolynomialDecay",
+  "pruning_initial_sparsity": 0.0,
+  "pruning_final_sparsity": 0.35,
+  "pruning_begin_step": 0,
+  "pruning_end_step": 2880,
+  "pruning_frequency": 100,
+  "pruning_epochs": 40,
+  "batch_size": 32,
+  "steps_per_epoch": 72,
+  "calibration_source": "training_split_stratified"
+}

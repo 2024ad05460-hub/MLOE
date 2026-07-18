@@ -1,0 +1,687 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260717124856
+Username: LAPTOP-QP7JV6SQ\ASUS
+RunAs User: LAPTOP-QP7JV6SQ\ASUS
+Configuration Name: 
+Machine: LAPTOP-QP7JV6SQ (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\ASUS\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.4.0' -BundledModulesPath 'c:\Users\ASUS\.vscode\extensions\ms-vscode.powershell-2025.4.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.4.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\ASUS\AppData\Roaming\Code\logs\20260717T094734\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\ASUS\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-23704-611045.json' -FeatureFlags @() 
+Process ID: 38676
+PSVersion: 5.1.26100.8875
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8875
+BuildVersion: 10.0.26100.8875
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\complete_pipeline_verification.log
+
+============================================================
+[1/32] Checking prerequisites
+============================================================
+Running: python --version
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\inline_0ad8fe94b2f54553a0d9c6b74bcb767f.py
+Required Python packages: PASS
+Running: docker version
+Running: docker compose version
+Running: wsl --status
+
+============================================================
+[2/32] Generating assignment-duration dataset
+============================================================
+Running: python training\generate_assignment_dataset.py
+[ASSIGN-DATA] class=0 Normal   mode=none       duration=20 min windows=117
+[ASSIGN-DATA] class=1 Warning  mode=temp_drift duration=15 min windows=87
+[ASSIGN-DATA] class=2 Critical mode=combined   duration=15 min windows=87
+[ASSIGN-DATA] total=291 -> training/assignment_dataset.npz
+
+============================================================
+[3/32] Generating leakage-safe grouped training dataset
+============================================================
+Running: python training\generate_dataset.py
+  TRK-SIM-00:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-01:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-02:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-03:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-04:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-05:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-06:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-07:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-08:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-09:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-00:temp_drift           87 windows; onset=  69.0s; pre-onset Normal=4
+  TRK-SIM-01:temp_drift           87 windows; onset=  50.8s; pre-onset Normal=3
+  TRK-SIM-02:temp_drift           87 windows; onset= 106.7s; pre-onset Normal=8
+  TRK-SIM-03:temp_drift           87 windows; onset=  35.4s; pre-onset Normal=1
+  TRK-SIM-04:temp_drift           87 windows; onset=  76.8s; pre-onset Normal=5
+  TRK-SIM-05:temp_drift           87 windows; onset=  86.1s; pre-onset Normal=6
+  TRK-SIM-06:temp_drift           87 windows; onset= 104.6s; pre-onset Normal=8
+  TRK-SIM-07:temp_drift           87 windows; onset=  91.2s; pre-onset Normal=7
+  TRK-SIM-08:temp_drift           87 windows; onset= 107.4s; pre-onset Normal=8
+  TRK-SIM-09:temp_drift           87 windows; onset=  25.4s; pre-onset Normal=0
+  TRK-SIM-00:combined             87 windows; onset=  52.4s; pre-onset Normal=3
+  TRK-SIM-01:combined             87 windows; onset= 110.1s; pre-onset Normal=9
+  TRK-SIM-02:combined             87 windows; onset=  17.8s; pre-onset Normal=0
+  TRK-SIM-03:combined             87 windows; onset=   7.5s; pre-onset Normal=0
+  TRK-SIM-04:combined             87 windows; onset= 102.2s; pre-onset Normal=8
+  TRK-SIM-05:combined             87 windows; onset=  11.5s; pre-onset Normal=0
+  TRK-SIM-06:combined             87 windows; onset=   4.1s; pre-onset Normal=0
+  TRK-SIM-07:combined             87 windows; onset=  53.5s; pre-onset Normal=3
+  TRK-SIM-08:combined             87 windows; onset= 100.0s; pre-onset Normal=7
+  TRK-SIM-09:combined             87 windows; onset=  99.7s; pre-onset Normal=7
+[STATS] fitted on 342 clean windows from 6 separate commissioning trucks
+[DATA] 2328 train / 582 validation windows; group overlap=0
+[DATA] validation trucks=[5, 6]
+Discovered training statistics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy (0.2 KB)
+
+============================================================
+[4/32] Training M1 FP32 model
+============================================================
+Running: python training\train_model.py
+[TRAIN] train trucks=[0, 1, 2, 3, 4, 7, 8, 9]; validation trucks=[5, 6]; overlap=0
+Epoch 1/160
+73/73 - 0s - 7ms/step - accuracy: 0.8037 - loss: 0.5257 - val_accuracy: 0.9519 - val_loss: 0.2473 - learning_rate: 0.0010
+Epoch 2/160
+73/73 - 0s - 1ms/step - accuracy: 0.9832 - loss: 0.1556 - val_accuracy: 0.9931 - val_loss: 0.0938 - learning_rate: 0.0010
+Epoch 3/160
+73/73 - 0s - 1ms/step - accuracy: 0.9893 - loss: 0.0898 - val_accuracy: 0.9931 - val_loss: 0.0555 - learning_rate: 0.0010
+Epoch 4/160
+73/73 - 0s - 1ms/step - accuracy: 0.9901 - loss: 0.0657 - val_accuracy: 0.9931 - val_loss: 0.0419 - learning_rate: 0.0010
+Epoch 5/160
+73/73 - 0s - 1ms/step - accuracy: 0.9901 - loss: 0.0551 - val_accuracy: 0.9931 - val_loss: 0.0363 - learning_rate: 0.0010
+Epoch 6/160
+73/73 - 0s - 1ms/step - accuracy: 0.9905 - loss: 0.0493 - val_accuracy: 0.9931 - val_loss: 0.0335 - learning_rate: 0.0010
+Epoch 7/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
+Epoch 8/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0433 - val_accuracy: 0.9931 - val_loss: 0.0308 - learning_rate: 0.0010
+Epoch 9/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0415 - val_accuracy: 0.9931 - val_loss: 0.0301 - learning_rate: 0.0010
+Epoch 10/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0400 - val_accuracy: 0.9931 - val_loss: 0.0297 - learning_rate: 0.0010
+Epoch 11/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0388 - val_accuracy: 0.9948 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 12/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0376 - val_accuracy: 0.9948 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 13/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 14/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0357 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 15/160
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0349 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
+Epoch 16/160
+73/73 - 0s - 1ms/step - accuracy: 0.9914 - loss: 0.0341 - val_accuracy: 0.9931 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 17/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0333 - val_accuracy: 0.9931 - val_loss: 0.0292 - learning_rate: 0.0010
+Epoch 18/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0326 - val_accuracy: 0.9931 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 19/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0320 - val_accuracy: 0.9931 - val_loss: 0.0294 - learning_rate: 0.0010
+Epoch 20/160
+73/73 - 0s - 1ms/step - accuracy: 0.9918 - loss: 0.0314 - val_accuracy: 0.9931 - val_loss: 0.0295 - learning_rate: 0.0010
+Epoch 21/160
+73/73 - 0s - 1ms/step - accuracy: 0.9923 - loss: 0.0308 - val_accuracy: 0.9931 - val_loss: 0.0295 - learning_rate: 0.0010
+Epoch 22/160
+73/73 - 0s - 1ms/step - accuracy: 0.9927 - loss: 0.0301 - val_accuracy: 0.9931 - val_loss: 0.0297 - learning_rate: 0.0010
+Epoch 23/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0295 - val_accuracy: 0.9931 - val_loss: 0.0298 - learning_rate: 0.0010
+Epoch 24/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0290 - val_accuracy: 0.9931 - val_loss: 0.0301 - learning_rate: 0.0010
+Epoch 25/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0285 - val_accuracy: 0.9931 - val_loss: 0.0302 - learning_rate: 0.0010
+Epoch 26/160
+73/73 - 0s - 1ms/step - accuracy: 0.9931 - loss: 0.0276 - val_accuracy: 0.9931 - val_loss: 0.0303 - learning_rate: 5.0000e-04
+Epoch 27/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0272 - val_accuracy: 0.9914 - val_loss: 0.0304 - learning_rate: 5.0000e-04
+Epoch 28/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0270 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+Epoch 29/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+Epoch 30/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0264 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 31/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0263 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 32/160
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0260 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
+Epoch 33/160
+73/73 - 0s - 1ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+Epoch 34/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0255 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
+Epoch 35/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0253 - val_accuracy: 0.9914 - val_loss: 0.0312 - learning_rate: 5.0000e-04
+Epoch 36/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0251 - val_accuracy: 0.9914 - val_loss: 0.0313 - learning_rate: 5.0000e-04
+Epoch 37/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0249 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 5.0000e-04
+Epoch 38/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0244 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 2.5000e-04
+Epoch 39/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0243 - val_accuracy: 0.9914 - val_loss: 0.0315 - learning_rate: 2.5000e-04
+Epoch 40/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0242 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
+Epoch 41/160
+73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0241 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
+Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmpjtjz58k4'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 6), dtype=tf.float32, name='features')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  1916719648208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1916719649360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1916719647440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1916719647248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1916719649936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  1916719647632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+python.exe : WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: All lo...itten to STDERR:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+W0000 00:00:1784267348.573807   37452 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1784267348.573878   37452 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1784267348.577302   37452 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+[TRAIN] grouped validation accuracy=99.48%
+[TRAIN] recall Normal=100.0% Warning=98.8% Critical=99.4%
+[PASS] grouped validation accuracy gate cleared
+
+============================================================
+[5/32] Validating held-out accuracy above 88 percent
+============================================================
+Validation accuracy detected: 99.48%
+Validation accuracy gate: PASS
+
+============================================================
+[6/32] Creating M2 full INT8 PTQ model
+============================================================
+Running: python training\convert_ptq.py
+Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmpvwo4rszm'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 6), dtype=tf.float32, name='features')
+Output Type:
+  TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
+Captures:
+  3061115980880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  3061115982032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  3061115982416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  3061115981456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  3061115983184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  3061115983376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+python.exe : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\convert.py:863: UserWarning: Statistics for quantized inputs were expected, but
+not specified; continuing anyway.
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\LogiEdge\Log...tinuing anyway.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1784267352.142579    2732 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1784267352.142660    2732 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1784267352.147614    2732 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is
+scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[PTQ] size=4.46 KB; grouped validation accuracy=99.31%
+[PTQ] recall Normal=100.0% Warning=98.1% Critical=99.4%
+Discovered M2 PTQ INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite (4.5 KB)
+
+============================================================
+[7/32] Creating M3 pruned and INT8 model
+============================================================
+Running: python training\prune_quantise.py
+python.exe : WARNING:tensorflow:From C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy
+is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING:tensorf...ntropy instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+
+WARNING:tensorflow:From C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tf_keras\src\backend.py:1400: The name tf.executing_eagerly_outside_functions is
+deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+WARNING:tensorflow:From C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tf_keras\src\utils\tf_utils.py:492: The name tf.ragged.RaggedTensorValue is deprecated.
+Please use tf.compat.v1.ragged.RaggedTensorValue instead.
+
+WARNING:tensorflow:From C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tf_keras\src\engine\base_layer_utils.py:384: The name
+tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\convert.py:863: UserWarning: Statistics for quantized inputs were expected, but not
+specified; continuing anyway.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1784267362.304175   34700 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+W0000 00:00:1784267362.304248   34700 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+I0000 00:00:1784267362.309656   34700 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is
+scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[PRUNE] d1 unstructured sparsity=34.9%
+[PRUNE] d2 unstructured sparsity=35.0%
+[PRUNE] structural d1 32 -> 21; d2 16 -> 10
+[PRUNE] params=400; size=3.63 KB; grouped validation accuracy=99.14%
+[PRUNE] recall Normal=99.6% Warning=98.1% Critical=99.4%
+Discovered M3 pruned INT8 model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite (3.6 KB)
+
+============================================================
+[8/32] Running normalisation experiment
+============================================================
+Running: python experiments\normalisation_experiment.py
+python.exe : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated
+and is scheduled for deletion in
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\LogiEdge\Log...for deletion in:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+Model: m3_pruned_int8.tflite   validation windows: 582   (true Critical: 174)
+
+normalisation     accuracy   Normal  Warning  Critical  missed Critical
+-----------------------------------------------------------------------
+correct stats       99.14%    99.6%    98.1%     99.4%            0
++3 sigma shift      99.14%   100.0%    96.9%    100.0%            0
+-3 sigma shift      68.90%    28.2%    98.1%    100.0%            0
+
+Accuracy drop under +3 sigma: 0.00 points
+Class-2 (Critical) recall: 99.4% -> 100.0%
+Critical windows silently reported as Normal: 0 -> 0
+
+-> C:\LogiEdge\LogiEdge_Complete_Assignment_Package\experiments\normalisation_experiment.csv
+This is why training_stats.npy is loaded, never recomputed at runtime.
+
+============================================================
+[9/32] Running five-metric benchmark
+============================================================
+Running: python optimisation\benchmark.py
+python.exe : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated
+and is scheduled for deletion in
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\LogiEdge\Log...for deletion in:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[BENCH] host: Intel64 Family 6 Model 198 Stepping 2, GenuineIntel  24 cores   TDP assumed 15.0 W
+[BENCH] 10 warm-up + 200 timed runs per variant, 582 validation windows
+
+  M1_FP32          lat   1.38 +/- 0.89 us  (p95  1.50 us)  size  5.19 KB  acc 99.48%  E  20.3 uJ  Crit-recall 99.4%
+  M2_PTQ_INT8      lat   1.33 +/- 0.02 us  (p95  1.40 us)  size  4.46 KB  acc 99.31%  E  19.9 uJ  Crit-recall 99.4%
+  M3_PRUNE35_INT8  lat   1.30 +/- 0.09 us  (p95  1.40 us)  size  3.63 KB  acc 99.14%  E  19.5 uJ  Crit-recall 99.4%
+
+[BENCH] latency spread BETWEEN variants: 0.08 us; worst run-to-run noise WITHIN a variant: 0.89 us
+[BENCH] -> the variants are NOT separable on latency on this host. Size, energy and Class-2 recall decide; any 'speed-up' claim here would be noise.
+
+[BENCH] -> C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
+[BENCH] -> C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_chart.png
+
+=========== TASK F3 - DEPLOYMENT RECOMMENDATION ===========
+  Per-inference latency budget from the 90 s SLA:
+    90 s - 30 s window fill - 10 s step quantisation - 5 s alert uplink
+    = ~45 s of headroom for inference. M3 uses 1.3 us = 0.03 parts per million of it.
+  Size on Flash: 3.6 KB (30% smaller than FP32)
+  Class 2 (Critical) recall: 99.4% (PASS - must exceed 95%)
+  => Deploy M3 to the 85 trucks.
+
+============================================================
+[10/32] Validating M1, M2 and M3 benchmark outputs
+============================================================
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\inline_fc4721ad21b644ddb0a7e161d037fa5e.py
+
+
+============================================================
+[11/32] Validating M3 Critical recall above 95 percent
+============================================================
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\inline_94b2f58218fe4077beeb845a699e24d8.py
+
+
+============================================================
+[12/32] Generating PSI reference distribution
+============================================================
+Running: python monitoring\drift_monitor.py --mode reference --score normal_prob
+python.exe : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated
+and is scheduled for deletion in
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\LogiEdge\Log...for deletion in:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[REF] 300 clean Normal windows -> C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\reference_dist.json
+  [0,0.25)       0.7%
+  [0.25,0.50)    0.5%
+  [0.50,0.75)    3.0%  #
+  [0.75,1.0]    96.0%  ################################################
+[REF] Normal-class share 99.3%
+Discovered PSI reference distribution: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\reference_dist.json (0.5 KB)
+
+============================================================
+[13/32] Running PSI drift and recovery simulation
+============================================================
+Running: python monitoring\drift_monitor.py --mode simulate --score normal_prob
+python.exe : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated
+and is scheduled for deletion in
+At C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1:195 char:13
++             & python $scriptPath @Arguments 2>&1 | Tee-Object -FilePa ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\LogiEdge\Log...for deletion in:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+[SIM] phases: clean 25m -> --anomaly combined 10m -> clean 25m   (score=normal_prob, PSI every simulated 60 s)
+
+--- phase CLEAN (--anomaly none) ---
+[PSI] filling rolling window 1/100
+[PSI] filling rolling window 7/100
+[PSI] filling rolling window 13/100
+[PSI] filling rolling window 19/100
+[PSI] filling rolling window 25/100
+[PSI] filling rolling window 28/100
+[PSI] filling rolling window 34/100
+[PSI] filling rolling window 40/100
+[PSI] filling rolling window 46/100
+[PSI] filling rolling window 52/100
+[PSI] filling rolling window 55/100
+[PSI] filling rolling window 61/100
+[PSI] filling rolling window 67/100
+[PSI] filling rolling window 73/100
+[PSI] filling rolling window 79/100
+[PSI] filling rolling window 82/100
+[PSI] filling rolling window 88/100
+[PSI] filling rolling window 94/100
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.004  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 3.0% [0.75,1.0]=96.0%
+[PSI] CLEAN      PSI=0.008  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=97.0%
+[PSI] CLEAN      PSI=0.008  crit_share=  0.0%  [0,0.25)= 0.5% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=97.0%
+--- phase INJECTED (--anomaly combined) ---
+[PSI] INJECTED   PSI=0.009  crit_share=  1.0%  [0,0.25)= 1.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=96.0%
+[PSI] INJECTED   PSI=0.160  crit_share=  7.0%  [0,0.25)= 7.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=90.0%
+[PSI] INJECTED   PSI=0.390  crit_share= 13.0%  [0,0.25)=13.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=84.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.390
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=0.659  crit_share= 19.0%  [0,0.25)=19.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=78.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.659
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=0.958  crit_share= 25.0%  [0,0.25)=25.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=72.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.958
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=1.118  crit_share= 28.0%  [0,0.25)=28.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=69.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.118
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] INJECTED   PSI=1.457  crit_share= 34.0%  [0,0.25)=34.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=63.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.457
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=1.821  crit_share= 40.0%  [0,0.25)=40.0% [0.25,0.50)= 1.0% [0.50,0.75)= 2.0% [0.75,1.0]=57.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.821
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=2.206  crit_share= 46.0%  [0,0.25)=46.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=54.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.206
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] INJECTED   PSI=2.614  crit_share= 52.0%  [0,0.25)=52.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=48.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.614
+   -> classification: REAL CONCEPT DRIFT (fault present)
+--- phase RECOVERED (--anomaly none) ---
+[PSI] RECOVERED  PSI=2.756  crit_share= 54.0%  [0,0.25)=54.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=46.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.756
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.756  crit_share= 54.0%  [0,0.25)=54.0% [0.25,0.50)= 0.5% [0.50,0.75)= 0.5% [0.75,1.0]=46.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.756
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.825  crit_share= 54.0%  [0,0.25)=55.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=44.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.825
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.399  crit_share= 48.0%  [0,0.25)=49.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=50.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.399
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=2.197  crit_share= 45.0%  [0,0.25)=46.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=53.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=2.197
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.813  crit_share= 39.0%  [0,0.25)=40.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=59.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.813
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.453  crit_share= 33.0%  [0,0.25)=34.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=65.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.453
+   -> classification: REAL CONCEPT DRIFT (fault present)
+[PSI] RECOVERED  PSI=1.119  crit_share= 27.0%  [0,0.25)=28.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=71.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=1.119
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.810  crit_share= 21.0%  [0,0.25)=22.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=77.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.810
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.665  crit_share= 18.0%  [0,0.25)=19.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=80.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.665
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.399  crit_share= 12.0%  [0,0.25)=13.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=86.0%
+[LOGIBRIDGE DRIFT ALERT] PSI=0.399
+   -> classification: DATA/SENSOR DRIFT (investigate probe)
+[PSI] RECOVERED  PSI=0.226  crit_share=  6.0%  [0,0.25)= 9.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=89.0%
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[LOGIBRIDGE] drift cleared, PSI=0.039 < 0.1
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[PSI] RECOVERED  PSI=0.039  crit_share=  0.0%  [0,0.25)= 3.0% [0.25,0.50)= 0.5% [0.50,0.75)= 2.0% [0.75,1.0]=95.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+[PSI] RECOVERED  PSI=0.037  crit_share=  0.0%  [0,0.25)= 2.0% [0.25,0.50)= 0.5% [0.50,0.75)= 1.0% [0.75,1.0]=97.0%
+
+=========== PSI SUMMARY (Report Section 5) ===========
+  clean      max PSI : 0.008
+  injected   max PSI : 2.614   crossed 0.25 3.0 min after injection (PASS: requirement is < 5 min)
+  recovered final PSI: 0.037   (PASS: required < 0.10)
+  trace -> monitoring\psi_trace.json
+
+============================================================
+[14/32] Validating PSI alert and recovery thresholds
+============================================================
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\inline_58be82ac210a40728f861c791e78d777.py
+
+
+============================================================
+[15/32] Running automated tests
+============================================================
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\invoke_module_1812717817cc47b7a151efc6a657578f.py
+........                                                                 [100%]
+
+============================================================
+[16/32] Generating diagrams, evidence figures and calculations
+============================================================
+Running: python scenario_architecture\make_diagrams.py
+wrote scenario_architecture/system_architecture.png
+wrote data_pipeline/mqtt_topic_tree.png
+Running: python reports\build_evidence_figures.py
+Wrote figures to C:\LogiEdge\LogiEdge_Complete_Assignment_Package\reports\figures
+Running: python experiments\constraint_numbers.py
+=== A1 BANDWIDTH ===
+raw per truck/day      : 518.7 MB   (temp 4 B/s + vib 6000 B/s)
+raw cost/truck/day     : Rs 51.87
+raw cost 85 trucks/yr  : Rs 1,609,409
+raw cost 265 trucks/yr : Rs 5,017,568
+edge per truck/day     : 63.6 KB
+edge cost 85 trucks/yr : Rs 197
+reduction factor       : 8,156x (99.9877% less data)
+JSON-over-MQTT reality : ~3x the raw figure (1,556 MB/day) if published un-reduced
+
+=== B2 ARITHMETIC INTENSITY / ROOFLINE ===
+Arithmetic Intensity   : 4e+07 FLOP / 2e+07 B = 2.50 FLOP/byte
+Ridge point            : 2e+10 / 1e+10 = 1.333 FLOP/byte
+AI (2.50) > ridge (1.33) -> COMPUTE BOUND
+Attainable performance : 16.00 GFLOP/s (= min(peak, BW x AI))
+Compute-limited time   : 2.812 ms
+Memory-limited time    : 1.500 ms  -> the roof that binds is compute
+Predicted latency      : 2.81 ms vs the 90 s SLA -> 32,000x margin
+
+=== E3 OTA per update cycle (spec 280 KB, 85 trucks) ===
+  full replacement :   23.242 MB   Rs    2.324
+  canary 10 -> 75  :   23.242 MB   Rs    2.324 (same bytes, staged)
+  shadow mode      :    228.9 MB   Rs    22.89  (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 20.22 | canary Rs 20.22 | shadow Rs 199.12
+=== E3 OTA per update cycle (actual M3, 85 trucks) ===
+  full replacement :    0.313 MB   Rs    0.031
+  canary 10 -> 75  :    0.313 MB   Rs    0.031 (same bytes, staged)
+  shadow mode      :    205.9 MB   Rs    20.59  (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 0.27 | canary Rs 0.27 | shadow Rs 179.17
+
+  -> the three strategies differ by RUPEES. The decision is therefore NOT financial:
+     one bad model x 85 trucks x Rs 28 lakh cargo dwarfs the entire OTA budget.
+
+=== D2 DOCKER LAYER CACHE (85 trucks) ===
+  naive full image :  12750.0 MB   Rs  1275.00
+  cached model layer:   0.313 MB   Rs   0.0313
+  saving           :  12749.7 MB   Rs  1274.97   (99.998% less)
+  per truck        : 150 MB -> 3.8 KB
+
+Generated runtime artifacts
+---------------------------
+M2 model       : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m2_ptq_int8.tflite
+M3 model       : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m3_pruned_int8.tflite
+Training stats : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\data_pipeline\training_stats.npy
+PSI reference  : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\monitoring\reference_dist.json
+
+
+============================================================
+[17/32] Preparing inference context and clean runtime database
+============================================================
+
+============================================================
+[18/32] Building baseline inference Docker image
+============================================================
+Running: docker build --progress=plain -t logibridge/inference:v1 C:\LogiEdge\LogiEdge_Complete_Assignment_Package\inference
+
+============================================================
+[19/32] Running OTA Docker layer-cache demonstration
+============================================================
+Running: docker build --progress=plain -t logibridge/inference:ota-model-only C:\LogiEdge\LogiEdge_Complete_Assignment_Package\inference
+Running: python C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\inline_4e14fb7ec6c2426f948dea32fd76e9da.py
+OTA BANDWIDTH CALCULATION
+-------------------------
+M3 model size           : 3.63 KB
+85-truck model transfer : 0.30 MB
+Estimated transfer cost : INR 0.03
+
+============================================================
+[20/32] Starting local and uplink MQTT brokers
+============================================================
+Running: docker compose -f C:\LogiEdge\LogiEdge_Complete_Assignment_Package\demo\docker-compose.yml down
+Running: docker compose -f C:\LogiEdge\LogiEdge_Complete_Assignment_Package\demo\docker-compose.yml up -d
+Port 1883: PASS
+Port 1884: PASS
+Running: docker compose -f C:\LogiEdge\LogiEdge_Complete_Assignment_Package\demo\docker-compose.yml ps -a
+
+============================================================
+[21/32] Starting inference container and checking readiness
+============================================================
+Running: docker rm -f logibridge-inference
+Running: docker run -d --name logibridge-inference --restart unless-stopped -e TRUCK_ID=TRK-01 -e MODEL_PATH=/data/model.tflite -e STATS_PATH=/data/training_stats.npy -e REFERENCE_PATH=/data/reference_dist.json -e ALERT_DB=/data/alerts.db -e LOCAL_MQTT_HOST=host.docker.internal -e LOCAL_MQTT_PORT=1883 -e UPLINK_MQTT_HOST=host.docker.internal -e UPLINK_MQTT_PORT=1884 -e UPLINK_MQTT_TLS=false -v C:\LogiEdge\runtime:/data logibridge/inference:v1
+Container health: healthy
+Running: docker logs logibridge-inference --tail 100
+
+============================================================
+[22/32] Capturing required MQTT inference topic
+============================================================
+
+============================================================
+[23/32] Running Normal, Warning, vibration and Critical scenarios
+============================================================
+
+
+
+
+
+============================================================
+LOGIEDGE COMPLETE PIPELINE: FAILED
+============================================================
+Error type : System.Management.Automation.RuntimeException
+Message    : No messages received on logibridge/trucks/+/inference.
+Script line: 651
+Command    : if (-not (Test-Path $MqttCapture) -or (Get-Item $MqttCapture).Length -eq 0) { throw "No messages received on logibridge/trucks/+/inference." }
+
+PowerShell error details:
+
+
+PSMessageDetails      : 
+Exception             : System.Management.Automation.RuntimeException: No messages received on logibridge/trucks/+/inference.
+TargetObject          : No messages received on logibridge/trucks/+/inference.
+CategoryInfo          : OperationStopped: (No messages rec...ks/+/inference.:String) [], RuntimeException
+FullyQualifiedErrorId : No messages received on logibridge/trucks/+/inference.
+ErrorDetails          : 
+InvocationInfo        : System.Management.Automation.InvocationInfo
+ScriptStackTrace      : at <ScriptBlock>, C:\LogiEdge\LogiEdge_Complete_Assignment_Package\run_all.ps1: line 651
+                        at <ScriptBlock>, <No file>: line 1
+PipelineIterationInfo : {}
+Running: docker logs logibridge-inference --tail 150
+**********************
+Windows PowerShell transcript end
+End time: 20260717125441
+**********************

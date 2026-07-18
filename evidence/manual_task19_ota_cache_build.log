@@ -1,0 +1,72 @@
+﻿#0 building with "desktop-linux" instance using docker driver
+System.Management.Automation.RemoteException
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.21kB done
+#1 DONE 0.0s
+System.Management.Automation.RemoteException
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.4s
+System.Management.Automation.RemoteException
+#3 [internal] load .dockerignore
+#3 transferring context: 70B done
+#3 DONE 0.0s
+System.Management.Automation.RemoteException
+#4 [internal] load build context
+#4 transferring context: 4.04kB done
+#4 DONE 0.0s
+System.Management.Automation.RemoteException
+#5 [ 1/12] FROM docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93
+#5 resolve docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93 0.0s done
+#5 DONE 0.0s
+System.Management.Automation.RemoteException
+#6 [ 3/12] COPY requirements.txt /app/requirements.txt
+#6 CACHED
+System.Management.Automation.RemoteException
+#7 [ 8/12] COPY inference_service.py /app/inference_service.py
+#7 CACHED
+System.Management.Automation.RemoteException
+#8 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
+#8 CACHED
+System.Management.Automation.RemoteException
+#9 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
+#9 CACHED
+System.Management.Automation.RemoteException
+#10 [10/12] COPY training_stats.npy /data/training_stats.npy
+#10 CACHED
+System.Management.Automation.RemoteException
+#11 [ 2/12] WORKDIR /app
+#11 CACHED
+System.Management.Automation.RemoteException
+#12 [ 9/12] RUN mkdir -p /data
+#12 CACHED
+System.Management.Automation.RemoteException
+#13 [ 5/12] COPY preprocessing.py /app/preprocessing.py
+#13 CACHED
+System.Management.Automation.RemoteException
+#14 [ 7/12] COPY psi.py /app/psi.py
+#14 CACHED
+System.Management.Automation.RemoteException
+#15 [11/12] COPY reference_dist.json /data/reference_dist.json
+#15 CACHED
+System.Management.Automation.RemoteException
+#16 [12/12] COPY model.tflite /data/model.tflite
+#16 CACHED
+System.Management.Automation.RemoteException
+#17 exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:30adaa4229290c95ad83ab71c59a2bf580deac2f53f104c0e2e02c4b93961c0e done
+#17 exporting config sha256:905720d9667a85c7dddf5a431e99843690a0e6b3d67fe1a96fb5179dd96d4904 done
+#17 exporting attestation manifest sha256:f2278ba0826faf4bdd078a3c90a20fbe8f51ca70604a6443edd387a8fc174220 0.0s done
+#17 exporting manifest list sha256:712fda61496c8da55c1a5fa68ca395302762fbf7254d679543ec54c342831d10 done
+#17 naming to docker.io/logibridge/inference:ota-model-only done
+#17 unpacking to docker.io/logibridge/inference:ota-model-only done
+#17 DONE 0.1s
+System.Management.Automation.RemoteException
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/l1upa0ic2jxkadaxuf751ybat
+Baseline model hash: 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
+OTA model hash     : B688C47DC96D9A5995E3BC8836F864D88863FF7AAA148A5AB195ECF03382E8D1
+Full image size       : 80.99 MB
+Model size            : 0.0036 MB
+85-truck full cost    : INR 688.38
+85-truck model cost   : INR 0.03
+Bandwidth saving      : 99.996%

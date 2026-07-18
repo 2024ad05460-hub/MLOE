@@ -1,0 +1,7 @@
+﻿LOGIEDGE PIPELINE FAILURE
+========================
+Time       : 2026-07-17 12:54:41
+Error type : System.Management.Automation.RuntimeException
+Message    : No messages received on logibridge/trucks/+/inference.
+Script line: 651
+Command    : if (-not (Test-Path $MqttCapture) -or (Get-Item $MqttCapture).Length -eq 0) { throw "No messages received on logibridge/trucks/+/inference." }

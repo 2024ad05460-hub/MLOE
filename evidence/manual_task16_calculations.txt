@@ -1,0 +1,41 @@
+﻿=== A1 BANDWIDTH ===
+raw per truck/day      : 518.7 MB   (temp 4 B/s + vib 6000 B/s)
+raw cost/truck/day     : Rs 51.87
+raw cost 85 trucks/yr  : Rs 1,609,409
+raw cost 265 trucks/yr : Rs 5,017,568
+edge per truck/day     : 63.6 KB
+edge cost 85 trucks/yr : Rs 197
+reduction factor       : 8,156x (99.9877% less data)
+JSON-over-MQTT reality : ~3x the raw figure (1,556 MB/day) if published un-reduced
+
+=== B2 ARITHMETIC INTENSITY / ROOFLINE ===
+Model operations: 45 MFLOPs
+Data movement: 18 MB
+Arithmetic Intensity: 2.500 FLOP/byte
+Ridge Point: 1.333 FLOP/byte
+Classification: compute-bound
+Attainable performance: 16.000 GFLOP/s
+Compute latency estimate: 2.812 ms
+Memory latency estimate: 1.500 ms
+Roofline latency estimate: 2.812 ms
+Latency margin versus 90 s SLA: 32,000x
+
+=== E3 OTA per update cycle (spec 280 KB, 85 trucks) ===
+  full replacement :   23.242 MB   Rs    2.324
+  canary 10 -> 75  :   23.242 MB   Rs    2.324 (same bytes, staged)
+  shadow mode      :    228.9 MB   Rs    22.89 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 20.22 | canary Rs 20.22 | shadow Rs 199.12
+=== E3 OTA per update cycle (actual M3, 85 trucks) ===
+  full replacement :    0.313 MB   Rs    0.031
+  canary 10 -> 75  :    0.313 MB   Rs    0.031 (same bytes, staged)
+  shadow mode      :    205.9 MB   Rs    20.59 (model + 7 d dual-inference telemetry)
+  annual (8.7 cycles): full Rs 0.27 | canary Rs 0.27 | shadow Rs 179.17
+
+  -> The three strategies differ by rupees. The decision is therefore not financial:
+     one bad model x 85 trucks x Rs 28 lakh cargo dwarfs the entire OTA budget.
+
+=== D2 DOCKER LAYER CACHE (85 trucks) ===
+  naive full image  :  12750.0 MB   Rs  1275.00
+  cached model layer:   0.313 MB   Rs   0.0313
+  saving            :  12749.7 MB   Rs  1274.97   (99.998% less)
+  per truck         : 150 MB -> 3.8 KB

@@ -1,0 +1,4 @@
+﻿[ASSIGN-DATA] class=0 Normal   mode=none       duration=20 min windows=117
+[ASSIGN-DATA] class=1 Warning  mode=temp_drift duration=15 min windows=87
+[ASSIGN-DATA] class=2 Critical mode=combined   duration=15 min windows=87
+[ASSIGN-DATA] total=291 -> training/assignment_dataset.npz

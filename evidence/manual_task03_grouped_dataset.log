@@ -1,0 +1,33 @@
+﻿  TRK-SIM-00:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-01:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-02:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-03:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-04:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-05:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-06:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-07:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-08:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-09:none                117 windows; onset=   0.0s; pre-onset Normal=0
+  TRK-SIM-00:temp_drift           87 windows; onset=  69.0s; pre-onset Normal=4
+  TRK-SIM-01:temp_drift           87 windows; onset=  50.8s; pre-onset Normal=3
+  TRK-SIM-02:temp_drift           87 windows; onset= 106.7s; pre-onset Normal=8
+  TRK-SIM-03:temp_drift           87 windows; onset=  35.4s; pre-onset Normal=1
+  TRK-SIM-04:temp_drift           87 windows; onset=  76.8s; pre-onset Normal=5
+  TRK-SIM-05:temp_drift           87 windows; onset=  86.1s; pre-onset Normal=6
+  TRK-SIM-06:temp_drift           87 windows; onset= 104.6s; pre-onset Normal=8
+  TRK-SIM-07:temp_drift           87 windows; onset=  91.2s; pre-onset Normal=7
+  TRK-SIM-08:temp_drift           87 windows; onset= 107.4s; pre-onset Normal=8
+  TRK-SIM-09:temp_drift           87 windows; onset=  25.4s; pre-onset Normal=0
+  TRK-SIM-00:combined             87 windows; onset=  52.4s; pre-onset Normal=3
+  TRK-SIM-01:combined             87 windows; onset= 110.1s; pre-onset Normal=9
+  TRK-SIM-02:combined             87 windows; onset=  17.8s; pre-onset Normal=0
+  TRK-SIM-03:combined             87 windows; onset=   7.5s; pre-onset Normal=0
+  TRK-SIM-04:combined             87 windows; onset= 102.2s; pre-onset Normal=8
+  TRK-SIM-05:combined             87 windows; onset=  11.5s; pre-onset Normal=0
+  TRK-SIM-06:combined             87 windows; onset=   4.1s; pre-onset Normal=0
+  TRK-SIM-07:combined             87 windows; onset=  53.5s; pre-onset Normal=3
+  TRK-SIM-08:combined             87 windows; onset= 100.0s; pre-onset Normal=7
+  TRK-SIM-09:combined             87 windows; onset=  99.7s; pre-onset Normal=7
+[STATS] fitted on 342 clean windows from 6 separate commissioning trucks
+[DATA] 2328 train / 582 validation windows; group overlap=0
+[DATA] validation trucks=[5, 6]
