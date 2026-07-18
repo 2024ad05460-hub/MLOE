@@ -29,7 +29,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=5.19 KB
 [BENCH] accuracy=99.48%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0025 ms mean, 0.0026 ms p95
+[BENCH] latency=0.0025 ms mean, 0.0027 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -40,7 +40,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=4.46 KB
 [BENCH] accuracy=99.31%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0079 ms mean, 0.0083 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0084 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -51,23 +51,23 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=3.63 KB
 [BENCH] accuracy=99.14%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0081 ms mean, 0.0085 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0083 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
 [PARETO] Frontier validation
-[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002497 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
-[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.007933 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
-[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008067 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002495 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008047 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.007990 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
 [PARETO] recommended=M1_FP32
 [PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
 
 ========================================================================
 BENCHMARK COMPLETE
 ========================================================================
-M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0026 ms, size=5.19 KB, energy=0.000000 mJ
-M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0079 ms, p95=0.0083 ms, size=4.46 KB, energy=0.000000 mJ
-M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0085 ms, size=3.63 KB, energy=0.000000 mJ
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0027 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0084 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0083 ms, size=3.63 KB, energy=0.000000 mJ
 
 Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
 Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv

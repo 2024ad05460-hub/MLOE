@@ -1,6 +1,6 @@
 ﻿**********************
 Windows PowerShell transcript start
-Start time: 20260718121710
+Start time: 20260718130030
 Username: LAPTOP-QP7JV6SQ\ASUS
 RunAs User: LAPTOP-QP7JV6SQ\ASUS
 Configuration Name: 
@@ -27,7 +27,7 @@ LogiEdge Complete End-to-End Pipeline - Tasks 1 to 32
 ========================================================================================
 [STEP] Validate environment and required source files
 [STEP] Verify Docker engine
-  GitCommit:        de40ad0
+
 0
 [STEP] Verify Docker Compose
 
@@ -174,7 +174,7 @@ Epoch 5/160
 Epoch 6/160
 73/73 - 0s - 1ms/step - accuracy: 0.9905 - loss: 0.0493 - val_accuracy: 0.9931 - val_loss: 0.0335 - learning_rate: 0.0010
 Epoch 7/160
-73/73 - 0s - 2ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
 Epoch 8/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0433 - val_accuracy: 0.9931 - val_loss: 0.0308 - learning_rate: 0.0010
 Epoch 9/160
@@ -186,7 +186,7 @@ Epoch 11/160
 Epoch 12/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0376 - val_accuracy: 0.9948 - val_loss: 0.0292 - learning_rate: 0.0010
 Epoch 13/160
-73/73 - 0s - 2ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
+73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
 Epoch 14/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0357 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
 Epoch 15/160
@@ -218,7 +218,7 @@ Epoch 27/160
 Epoch 28/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0270 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
 Epoch 29/160
-73/73 - 0s - 2ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
 Epoch 30/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0264 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
 Epoch 31/160
@@ -226,7 +226,7 @@ Epoch 31/160
 Epoch 32/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0260 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
 Epoch 33/160
-73/73 - 0s - 2ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+73/73 - 0s - 1ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
 Epoch 34/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0255 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
 Epoch 35/160
@@ -243,19 +243,19 @@ Epoch 40/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0242 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
 Epoch 41/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0241 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
-Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmpyk0pzozg'. The following endpoints are available:
+Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmpitzxx0ea'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 6), dtype=tf.float32, name='features')
 Output Type:
   TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
 Captures:
-  2529733943824: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  2529733944784: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  2529733944976: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  2529733943632: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  2529733945168: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  2529733944400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291204432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291205392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291205584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291204240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291205776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2578291205008: TensorSpec(shape=(), dtype=tf.resource, name=None)
 [SAVE] Keras model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.keras
 [SAVE] TFLite model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
 [SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_metrics.json
@@ -443,7 +443,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=5.19 KB
 [BENCH] accuracy=99.48%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0025 ms mean, 0.0026 ms p95
+[BENCH] latency=0.0025 ms mean, 0.0027 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -454,7 +454,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=4.46 KB
 [BENCH] accuracy=99.31%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0079 ms mean, 0.0083 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0084 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -465,23 +465,23 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=3.63 KB
 [BENCH] accuracy=99.14%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0081 ms mean, 0.0085 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0083 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
 [PARETO] Frontier validation
-[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002497 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
-[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.007933 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
-[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008067 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002495 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008047 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.007990 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
 [PARETO] recommended=M1_FP32
 [PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
 
 ========================================================================
 BENCHMARK COMPLETE
 ========================================================================
-M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0026 ms, size=5.19 KB, energy=0.000000 mJ
-M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0079 ms, p95=0.0083 ms, size=4.46 KB, energy=0.000000 mJ
-M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0085 ms, size=3.63 KB, energy=0.000000 mJ
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0027 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0084 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0083 ms, size=3.63 KB, energy=0.000000 mJ
 
 Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
 Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
@@ -517,7 +517,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=5.19 KB
 [BENCH] accuracy=99.48%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0025 ms mean, 0.0026 ms p95
+[BENCH] latency=0.0025 ms mean, 0.0027 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -528,7 +528,7 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=4.46 KB
 [BENCH] accuracy=99.31%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0079 ms mean, 0.0083 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0084 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
@@ -539,23 +539,23 @@ C:\LogiEdge\LogiEdge_Complete_Assignment_Package\.venv\Lib\site-packages\tensorf
 [BENCH] size=3.63 KB
 [BENCH] accuracy=99.14%
 [BENCH] Critical recall=99.43%
-[BENCH] latency=0.0081 ms mean, 0.0085 ms p95
+[BENCH] latency=0.0080 ms mean, 0.0083 ms p95
 [BENCH] methodology=10 warm-ups, 200 measured runs
 [BENCH] CPU estimate=0.00%, power=0.0000 W, energy=0.000000 mJ
 
 [PARETO] Frontier validation
-[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002497 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
-[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.007933 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
-[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.008067 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
+[PARETO] M1_FP32: accuracy=99.4845%, latency=0.002495 ms, size=5.1875 KB, pareto_optimal=True, recommended=True
+[PARETO] M2_PTQ_INT8: accuracy=99.3127%, latency=0.008047 ms, size=4.4609 KB, pareto_optimal=True, recommended=False
+[PARETO] M3_PRUNE35_INT8: accuracy=99.1409%, latency=0.007990 ms, size=3.6328 KB, pareto_optimal=True, recommended=False
 [PARETO] recommended=M1_FP32
 [PARETO] CSV saved: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
 
 ========================================================================
 BENCHMARK COMPLETE
 ========================================================================
-M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0026 ms, size=5.19 KB, energy=0.000000 mJ
-M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0079 ms, p95=0.0083 ms, size=4.46 KB, energy=0.000000 mJ
-M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0081 ms, p95=0.0085 ms, size=3.63 KB, energy=0.000000 mJ
+M1_FP32: accuracy=99.48%, Critical recall=99.43%, mean=0.0025 ms, p95=0.0027 ms, size=5.19 KB, energy=0.000000 mJ
+M2_PTQ_INT8: accuracy=99.31%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0084 ms, size=4.46 KB, energy=0.000000 mJ
+M3_PRUNE35_INT8: accuracy=99.14%, Critical recall=99.43%, mean=0.0080 ms, p95=0.0083 ms, size=3.63 KB, energy=0.000000 mJ
 
 Benchmark CSV: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\benchmark_results.csv
 Pareto analysis: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\optimisation\results\pareto_analysis.csv
@@ -567,19 +567,20 @@ Task 10 - Validate Benchmark Methodology and Results
 ========================================================================================
 [PASS] Benchmark used 10 warm-ups and 200 measured runs for all variants
 
-variant         size_kb accuracy_pct recall_critical_pct mean_latency_ms p95_latency_ms energy_mj_per_inference warmup_runs measured_runs estimated_power_w laptop_tdp_w
--------         ------- ------------ ------------------- --------------- -------------- ----------------------- ----------- ------------- ----------------- ------------
-M1_FP32         5.1875  99.4845      99.4253             0.002497        0.0026         0.0                     10          200           0.0               45.0
-M2_PTQ_INT8     4.4609  99.3127      99.4253             0.007933        0.0083         0.0                     10          200           0.0               45.0
-M3_PRUNE35_INT8 3.6328  99.1409      99.4253             0.008067        0.0085         0.0                     10          200           0.0               45.0
+variant         size_kb accuracy_pct recall_critical_pct mean_latency_ms p95_latency_ms energy_mj_per_inference warmup_runs measured_runs estimated_
+                                                                                                                                          power_w
+-------         ------- ------------ ------------------- --------------- -------------- ----------------------- ----------- ------------- ----------
+M1_FP32         5.1875  99.4845      99.4253             0.002495        0.0027         0.0                     10          200           0.0
+M2_PTQ_INT8     4.4609  99.3127      99.4253             0.008047        0.0084         0.0                     10          200           0.0
+M3_PRUNE35_INT8 3.6328  99.1409      99.4253             0.00799         0.0083         0.0                     10          200           0.0
 
 
 
 variant         accuracy_pct mean_latency_ms size_kb pareto_optimal recommended
 -------         ------------ --------------- ------- -------------- -----------
-M1_FP32         99.4845      0.002497        5.1875  True           True
-M2_PTQ_INT8     99.3127      0.007933        4.4609  True           False
-M3_PRUNE35_INT8 99.1409      0.008067        3.6328  True           False
+M1_FP32         99.4845      0.002495        5.1875  True           True
+M2_PTQ_INT8     99.3127      0.008047        4.4609  True           False
+M3_PRUNE35_INT8 99.1409      0.00799         3.6328  True           False
 
 
 [PASS] Task 10 validated benchmark methodology and Pareto frontier
@@ -594,8 +595,8 @@ variant                 : M3_PRUNE35_INT8
 size_kb                 : 3.6328
 accuracy_pct            : 99.1409
 recall_critical_pct     : 99.4253
-mean_latency_ms         : 0.008067
-p95_latency_ms          : 0.0085
+mean_latency_ms         : 0.00799
+p95_latency_ms          : 0.0083
 energy_mj_per_inference : 0.0
 warmup_runs             : 10
 measured_runs           : 200
@@ -911,34 +912,34 @@ System.Management.Automation.RemoteException
 #5 resolve docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93 0.0s done
 #5 DONE 0.0s
 System.Management.Automation.RemoteException
-#6 [ 5/12] COPY preprocessing.py /app/preprocessing.py
+#6 [ 3/12] COPY requirements.txt /app/requirements.txt
 #6 CACHED
 System.Management.Automation.RemoteException
-#7 [10/12] COPY training_stats.npy /data/training_stats.npy
+#7 [ 7/12] COPY psi.py /app/psi.py
 #7 CACHED
 System.Management.Automation.RemoteException
-#8 [11/12] COPY reference_dist.json /data/reference_dist.json
+#8 [10/12] COPY training_stats.npy /data/training_stats.npy
 #8 CACHED
 System.Management.Automation.RemoteException
-#9 [ 2/12] WORKDIR /app
+#9 [11/12] COPY reference_dist.json /data/reference_dist.json
 #9 CACHED
 System.Management.Automation.RemoteException
-#10 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
+#10 [ 8/12] COPY inference_service.py /app/inference_service.py
 #10 CACHED
 System.Management.Automation.RemoteException
-#11 [ 8/12] COPY inference_service.py /app/inference_service.py
+#11 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
 #11 CACHED
 System.Management.Automation.RemoteException
-#12 [ 9/12] RUN mkdir -p /data
+#12 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
 #12 CACHED
 System.Management.Automation.RemoteException
-#13 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
+#13 [ 9/12] RUN mkdir -p /data
 #13 CACHED
 System.Management.Automation.RemoteException
-#14 [ 7/12] COPY psi.py /app/psi.py
+#14 [ 2/12] WORKDIR /app
 #14 CACHED
 System.Management.Automation.RemoteException
-#15 [ 3/12] COPY requirements.txt /app/requirements.txt
+#15 [ 5/12] COPY preprocessing.py /app/preprocessing.py
 #15 CACHED
 System.Management.Automation.RemoteException
 #16 [12/12] COPY model.tflite /data/model.tflite
@@ -948,13 +949,13 @@ System.Management.Automation.RemoteException
 #17 exporting layers done
 #17 exporting manifest sha256:bb7bb59385d7dd55059283e338e3ca4a6d2fa0841565c195b83f01aa0101d228 done
 #17 exporting config sha256:b11f108ca945babad8b341f41ebf294c4e23765d220027ad44e25df7f8bfe808 done
-#17 exporting attestation manifest sha256:a47635e8582c22364859d34457e89734579cc387add1d790a5190cd5a870f521 0.0s done
-#17 exporting manifest list sha256:8fa29de8d37a23c1105354b973c550c91f0e2a574c19bfdecc1220052f482223 done
+#17 exporting attestation manifest sha256:b36ca3c5644b87bf12b9425425c81b893845850e8cf176261c2b01f196416533 0.0s done
+#17 exporting manifest list sha256:ae225f6682fb7e6c3033a80013443655904354a3e4c32266146887c10b42867e done
 #17 naming to docker.io/logibridge/inference:ota-model-only done
 #17 unpacking to docker.io/logibridge/inference:ota-model-only done
 #17 DONE 0.1s
 System.Management.Automation.RemoteException
-View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yu4n6fp2l56brx9l2szz9zaty
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/kec1eo356r7nvsae2fisg03bx
 [STEP] Verify OTA image
 
 0
@@ -1045,26 +1046,7 @@ options:
 True
 [PASS] Required inference MQTT topic validated
 [STEP] Inspect inference logs after simulation
-INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
-[SVC] truck=TRK-01; model=/data/model.tflite; local=host.docker.internal:1883; uplink=host.docker.internal:1884
-[LOCAL] sensor broker connected at host.docker.internal:1883
-[UPLINK] connected at host.docker.internal:1884; backlog=0
-[UPLINK] replay complete; backlog=0
-[SVC] #0001 Normal   conf=0.957 temp=4.03C roc=+0.64C/min vib=0.44g
-[SVC] #0002 Normal   conf=0.973 temp=4.06C roc=+0.06C/min vib=0.44g
-[SVC] #0003 Normal   conf=0.996 temp=4.08C roc=-0.18C/min vib=0.43g
-[SVC] #0004 Normal   conf=0.945 temp=4.10C roc=+0.43C/min vib=0.43g
-[SVC] #0005 Normal   conf=0.855 temp=4.19C roc=+0.84C/min vib=0.42g
-[SVC] #0006 Normal   conf=0.980 temp=4.25C roc=-0.03C/min vib=0.42g
-[SVC] #0007 Normal   conf=0.996 temp=4.24C roc=-0.28C/min vib=0.42g
-[SVC] #0008 Normal   conf=0.984 temp=4.20C roc=+0.02C/min vib=0.42g
-[SVC] #0009 Warning  conf=0.500 temp=4.36C roc=+1.54C/min vib=0.44g
-[SVC] #0010 Warning  conf=0.676 temp=4.81C roc=+4.17C/min vib=0.47g
-[SVC] #0011 Critical conf=0.996 temp=5.49C roc=+4.71C/min vib=0.56g
-[SVC] #0012 Critical conf=0.996 temp=6.25C roc=+4.09C/min vib=0.67g
-[SVC] #0013 Critical conf=0.996 temp=7.02C roc=+4.97C/min vib=0.82g
-[SVC] #0014 Critical conf=0.996 temp=7.88C roc=+5.64C/min vib=0.99g
-[SVC] #0015 Critical conf=0.996 temp=8.80C roc=+5.33C/min vib=1.14g
+
 0
 [PASS] Sensor simulation command completed
 
@@ -1072,7 +1054,7 @@ INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 Task 24 - Verify Database
 ========================================================================================
 tables: ['inference_records', 'sqlite_sequence']
-labels: [('Critical', 5), ('Normal', 8), ('Warning', 2)]
+labels: [('Critical', 14), ('Normal', 1)]
 columns: ['id', 'event_id', 'ts', 'truck_id', 'cls', 'label', 'confidence', 'probs', 'features', 'door_open', 'severity', 'alert_required', 'inference_synced', 'alert_synced']
 unsynced: 0
 [PASS] Database contains 15 inference record(s)
@@ -1256,7 +1238,7 @@ Task 31 - Final Verification
 
 0
 tables: ['inference_records', 'sqlite_sequence']
-labels: [('Critical', 7), ('Normal', 15), ('Warning', 2)]
+labels: [('Critical', 19), ('Normal', 5)]
 columns: ['id', 'event_id', 'ts', 'truck_id', 'cls', 'label', 'confidence', 'probs', 'features', 'door_open', 'severity', 'alert_required', 'inference_synced', 'alert_synced']
 unsynced: 0
 Registry verification: {"name":"logibridge/inference","tags":["v2"]}
@@ -1272,5 +1254,5 @@ Evidence log  : C:\LogiEdge\LogiEdge_Complete_Assignment_Package\evidence\run_al
 [SUCCESS] Tasks 1-32 completed successfully.
 **********************
 Windows PowerShell transcript end
-End time: 20260718122158
+End time: 20260718130513
 **********************

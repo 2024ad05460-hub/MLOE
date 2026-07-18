@@ -19,34 +19,34 @@ System.Management.Automation.RemoteException
 #5 resolve docker.io/library/python:3.11-slim@sha256:db3ff2e1800a8581e2c48a27c3995339d47bdf046da21c7627accd3d51053a93 0.0s done
 #5 DONE 0.0s
 System.Management.Automation.RemoteException
-#6 [ 5/12] COPY preprocessing.py /app/preprocessing.py
+#6 [ 3/12] COPY requirements.txt /app/requirements.txt
 #6 CACHED
 System.Management.Automation.RemoteException
-#7 [10/12] COPY training_stats.npy /data/training_stats.npy
+#7 [ 7/12] COPY psi.py /app/psi.py
 #7 CACHED
 System.Management.Automation.RemoteException
-#8 [11/12] COPY reference_dist.json /data/reference_dist.json
+#8 [10/12] COPY training_stats.npy /data/training_stats.npy
 #8 CACHED
 System.Management.Automation.RemoteException
-#9 [ 2/12] WORKDIR /app
+#9 [11/12] COPY reference_dist.json /data/reference_dist.json
 #9 CACHED
 System.Management.Automation.RemoteException
-#10 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
+#10 [ 8/12] COPY inference_service.py /app/inference_service.py
 #10 CACHED
 System.Management.Automation.RemoteException
-#11 [ 8/12] COPY inference_service.py /app/inference_service.py
+#11 [ 6/12] COPY tflite_eval.py /app/tflite_eval.py
 #11 CACHED
 System.Management.Automation.RemoteException
-#12 [ 9/12] RUN mkdir -p /data
+#12 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
 #12 CACHED
 System.Management.Automation.RemoteException
-#13 [ 4/12] RUN pip install --no-cache-dir     -r /app/requirements.txt
+#13 [ 9/12] RUN mkdir -p /data
 #13 CACHED
 System.Management.Automation.RemoteException
-#14 [ 7/12] COPY psi.py /app/psi.py
+#14 [ 2/12] WORKDIR /app
 #14 CACHED
 System.Management.Automation.RemoteException
-#15 [ 3/12] COPY requirements.txt /app/requirements.txt
+#15 [ 5/12] COPY preprocessing.py /app/preprocessing.py
 #15 CACHED
 System.Management.Automation.RemoteException
 #16 [12/12] COPY model.tflite /data/model.tflite
@@ -56,13 +56,13 @@ System.Management.Automation.RemoteException
 #17 exporting layers done
 #17 exporting manifest sha256:bb7bb59385d7dd55059283e338e3ca4a6d2fa0841565c195b83f01aa0101d228 done
 #17 exporting config sha256:b11f108ca945babad8b341f41ebf294c4e23765d220027ad44e25df7f8bfe808 done
-#17 exporting attestation manifest sha256:a47635e8582c22364859d34457e89734579cc387add1d790a5190cd5a870f521 0.0s done
-#17 exporting manifest list sha256:8fa29de8d37a23c1105354b973c550c91f0e2a574c19bfdecc1220052f482223 done
+#17 exporting attestation manifest sha256:b36ca3c5644b87bf12b9425425c81b893845850e8cf176261c2b01f196416533 0.0s done
+#17 exporting manifest list sha256:ae225f6682fb7e6c3033a80013443655904354a3e4c32266146887c10b42867e done
 #17 naming to docker.io/logibridge/inference:ota-model-only done
 #17 unpacking to docker.io/logibridge/inference:ota-model-only done
 #17 DONE 0.1s
 System.Management.Automation.RemoteException
-View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yu4n6fp2l56brx9l2szz9zaty
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/kec1eo356r7nvsae2fisg03bx
 Baseline model hash: 85CAEF2630FD60922E71FCD2D85C525B2E440AFC88C7E1049CBCFCEC747626E0
 OTA model hash     : B688C47DC96D9A5995E3BC8836F864D88863FF7AAA148A5AB195ECF03382E8D1
 Full image size       : 80.99 MB
