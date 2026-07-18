@@ -2613,55 +2613,67 @@ without -SkipSimulation to validate Tasks 23-26.
 
     Write-Pass "Image pushed to $RegistryImage"
 
-    # ---------------------------------------------------------------------
-    # Task 28
-    # ---------------------------------------------------------------------
-    $script:CurrentTask = "Task 28"
-    Write-Section "Task 28 - Verify Registry"
+        # ---------------------------------------------------------------------
+        # Task 28
+        # ---------------------------------------------------------------------
+        $script:CurrentTask = "Task 28"
+        Write-Section "Task 28 - Verify Registry"
 
-    $catalog = Invoke-RestMethod `
-        -Uri "http://localhost:5000/v2/_catalog" `
-        -Method Get
+        $catalog = Invoke-RestMethod `
+            -Uri "http://localhost:5000/v2/_catalog" `
+            -Method Get
 
-    $tags = Invoke-RestMethod `
-        -Uri "http://localhost:5000/v2/logibridge/inference/tags/list" `
-        -Method Get
+        $tags = Invoke-RestMethod `
+            -Uri "http://localhost:5000/v2/logibridge/inference/tags/list" `
+            -Method Get
 
-    Write-Host "Repositories: $($catalog.repositories -join ', ')"
-    Write-Host "Tags: $($tags.tags -join ', ')"
+        Write-Host "Repositories: $($catalog.repositories -join ', ')"
+        Write-Host "Tags: $($tags.tags -join ', ')"
 
-    if ($catalog.repositories -notcontains "logibridge/inference") {
-        Stop-Pipeline "Registry catalog does not contain logibridge/inference."
-    }
+        if ($catalog.repositories -notcontains "logibridge/inference") {
+            Stop-Pipeline "Registry catalog does not contain logibridge/inference."
+        }
 
-    if ($tags.tags -notcontains "v2") {
-        Stop-Pipeline "Registry does not contain the v2 tag."
-    }
+        if ($tags.tags -notcontains "v2") {
+            Stop-Pipeline "Registry does not contain the v2 tag."
+        }
 
-    Write-Pass "Registry contains logibridge/inference:v2"
+        Write-Pass "Registry contains logibridge/inference:v2"
 
-    # ---------------------------------------------------------------------
-    # Fix local registry references before Ansible
-    # ---------------------------------------------------------------------
-    $script:CurrentTask = "Registry hostname correction"
-    Write-Section "Correct Local Registry References"
-    Update-LocalRegistryReferences
+        # ---------------------------------------------------------------------
+        # Fix local registry references before Ansible
+        # ---------------------------------------------------------------------
+        $script:CurrentTask = "Registry hostname correction"
+        Write-Section "Correct Local Registry References"
+        Update-LocalRegistryReferences
 
-    # ---------------------------------------------------------------------
-    # Tasks 29-30
-    # ---------------------------------------------------------------------
-    if ($SkipAnsible) {
-        Write-Section "Tasks 29 and 30 - Ansible Skipped"
-        Write-Warn "Ansible syntax and deployment tests were skipped by -SkipAnsible."
-    }
-    else {
-        Assert-Path -Path $InventoryFile -Description "Ansible inventory" -PathType Leaf
-        Assert-Path -Path $PlaybookFile -Description "Ansible playbook" -PathType Leaf
+        # ---------------------------------------------------------------------
+        # Prepare WSL project path for Tasks 29 and 30
+        # ---------------------------------------------------------------------
+        if ([string]::IsNullOrWhiteSpace($ProjectRoot)) {
+            Stop-Pipeline "ProjectRoot is empty and cannot be converted to a WSL path."
+        }
 
-        $wslProjectRoot = "/mnt/" + `
-            $ProjectRoot.Substring(0, 1).ToLower() + `
-            $ProjectRoot.Substring(2).Replace("\", "/")
+        if ($ProjectRoot -notmatch '^[A-Za-z]:\\') {
+            Stop-Pipeline "ProjectRoot is not a valid Windows drive path: $ProjectRoot"
+        }
 
+        $wslDrive = $ProjectRoot.Substring(0, 1).ToLowerInvariant()
+        $wslRelativePath = $ProjectRoot.Substring(2).Replace("\", "/")
+        $wslProjectRoot = "/mnt/$wslDrive$wslRelativePath"
+
+        Write-Host "Windows project root : $ProjectRoot" -ForegroundColor Cyan
+        Write-Host "WSL project root     : $wslProjectRoot" -ForegroundColor Cyan
+
+        # Remove unsupported Bash options that may have been inherited from
+        # earlier shell experiments.
+        Remove-Item Env:SHELLOPTS -ErrorAction SilentlyContinue
+        Remove-Item Env:BASH_ENV -ErrorAction SilentlyContinue
+        Remove-Item Env:WSLENV -ErrorAction SilentlyContinue
+
+        # ---------------------------------------------------------------------
+        # Task 29
+        # ---------------------------------------------------------------------
         $script:CurrentTask = "Task 29"
         Write-Section "Task 29 - Verify Exact Ansible Contract and Syntax"
 
@@ -2677,64 +2689,91 @@ without -SkipSimulation to validate Tasks 23-26.
         Invoke-Native `
             -FilePath $python `
             -Arguments @($playbookValidator) `
-            -Description "Validate exact seven-task Ansible contract"
+            -Description "Validate exact seven-task Ansible contract" |
+            Out-Null
 
-        $syntaxCommand = @"
-set -e
-cd '$wslProjectRoot'
-ansible-playbook --syntax-check \
-  -i deployment/inventory.ini \
-  deployment/logibridge_deploy.yml
-"@
+        # Use a one-line Bash command to prevent Windows CRLF characters
+        # from being interpreted by Bash as part of the command.
+        $syntaxCommand = (
+            "set -e; " +
+            "cd '$wslProjectRoot'; " +
+            "ansible-playbook --syntax-check " +
+            "-i deployment/inventory.ini " +
+            "deployment/logibridge_deploy.yml"
+        )
 
         Invoke-Native `
             -FilePath "wsl" `
-            -Arguments @("bash", "-lc", $syntaxCommand) `
-            -Description "Run Ansible syntax check"
+            -Arguments @(
+                "bash",
+                "-lc",
+                $syntaxCommand
+            ) `
+            -Description "Run Ansible syntax check" |
+            Out-Null
 
         Write-Pass "Ansible syntax check passed"
 
+        # ---------------------------------------------------------------------
+        # Task 30
+        # ---------------------------------------------------------------------
         $script:CurrentTask = "Task 30"
         Write-Section "Task 30 - Run Deployment Twice"
 
-        $deployCommand = @"
-set -e
-cd '$wslProjectRoot'
-ansible-playbook \
-  -i deployment/inventory.ini \
-  deployment/logibridge_deploy.yml \
-  --limit localhost_demo
-"@
+        # Use the local demonstration target. The physical truck IP addresses
+        # in the inventory are not expected to be reachable from this laptop.
+        $deployCommand = (
+            "set -e; " +
+            "cd '$wslProjectRoot'; " +
+            "ansible-playbook " +
+            "-i deployment/inventory.ini " +
+            "deployment/logibridge_deploy.yml " +
+            "--limit localhost_demo"
+        )
 
         $firstRun = Invoke-Native `
             -FilePath "wsl" `
-            -Arguments @("bash", "-lc", $deployCommand) `
+            -Arguments @(
+                "bash",
+                "-lc",
+                $deployCommand
+            ) `
             -Description "Run first Ansible deployment" `
             -CaptureOutput
 
-        if (($firstRun.Output -join "`n") -notmatch "failed=0") {
-            Stop-Pipeline "First Ansible deployment did not report failed=0."
+        $firstText = $firstRun.Output -join "`n"
+
+        if ($firstText -notmatch "failed=0") {
+            Stop-Pipeline `
+                "First Ansible deployment did not report failed=0."
         }
+
+        Write-Pass "First Ansible deployment completed with failed=0"
 
         $secondRun = Invoke-Native `
             -FilePath "wsl" `
-            -Arguments @("bash", "-lc", $deployCommand) `
+            -Arguments @(
+                "bash",
+                "-lc",
+                $deployCommand
+            ) `
             -Description "Run second Ansible deployment for idempotency" `
             -CaptureOutput
 
         $secondText = $secondRun.Output -join "`n"
 
         if ($secondText -notmatch "failed=0") {
-            Stop-Pipeline "Second Ansible deployment did not report failed=0."
+            Stop-Pipeline `
+                "Second Ansible deployment did not report failed=0."
         }
 
-        if ($secondText -match "changed=0") {
-            Write-Pass "Second Ansible run is idempotent: changed=0, failed=0"
+        if ($secondText -notmatch "changed=0") {
+            Stop-Pipeline `
+                "Second Ansible run must report changed=0 and failed=0."
         }
-        else {
-            Stop-Pipeline "Second Ansible run must report changed=0 and failed=0."
-        }
-    }
+
+        Write-Pass `
+            "Second Ansible run is idempotent: changed=0, failed=0"
 
     # ---------------------------------------------------------------------
     # Task 31

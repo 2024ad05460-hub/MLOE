@@ -13,7 +13,7 @@ Epoch 5/160
 Epoch 6/160
 73/73 - 0s - 1ms/step - accuracy: 0.9905 - loss: 0.0493 - val_accuracy: 0.9931 - val_loss: 0.0335 - learning_rate: 0.0010
 Epoch 7/160
-73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
+73/73 - 0s - 2ms/step - accuracy: 0.9910 - loss: 0.0458 - val_accuracy: 0.9931 - val_loss: 0.0318 - learning_rate: 0.0010
 Epoch 8/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0433 - val_accuracy: 0.9931 - val_loss: 0.0308 - learning_rate: 0.0010
 Epoch 9/160
@@ -25,7 +25,7 @@ Epoch 11/160
 Epoch 12/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0376 - val_accuracy: 0.9948 - val_loss: 0.0292 - learning_rate: 0.0010
 Epoch 13/160
-73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
+73/73 - 0s - 2ms/step - accuracy: 0.9910 - loss: 0.0367 - val_accuracy: 0.9948 - val_loss: 0.0291 - learning_rate: 0.0010
 Epoch 14/160
 73/73 - 0s - 1ms/step - accuracy: 0.9910 - loss: 0.0357 - val_accuracy: 0.9931 - val_loss: 0.0291 - learning_rate: 0.0010
 Epoch 15/160
@@ -57,7 +57,7 @@ Epoch 27/160
 Epoch 28/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0270 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
 Epoch 29/160
-73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
+73/73 - 0s - 2ms/step - accuracy: 0.9936 - loss: 0.0267 - val_accuracy: 0.9914 - val_loss: 0.0306 - learning_rate: 5.0000e-04
 Epoch 30/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0264 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
 Epoch 31/160
@@ -65,7 +65,7 @@ Epoch 31/160
 Epoch 32/160
 73/73 - 0s - 1ms/step - accuracy: 0.9936 - loss: 0.0260 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
 Epoch 33/160
-73/73 - 0s - 1ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
+73/73 - 0s - 2ms/step - accuracy: 0.9940 - loss: 0.0258 - val_accuracy: 0.9914 - val_loss: 0.0309 - learning_rate: 5.0000e-04
 Epoch 34/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0255 - val_accuracy: 0.9914 - val_loss: 0.0310 - learning_rate: 5.0000e-04
 Epoch 35/160
@@ -82,19 +82,19 @@ Epoch 40/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0242 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
 Epoch 41/160
 73/73 - 0s - 1ms/step - accuracy: 0.9944 - loss: 0.0241 - val_accuracy: 0.9914 - val_loss: 0.0316 - learning_rate: 2.5000e-04
-Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmp0cvnyg_g'. The following endpoints are available:
+Saved artifact at 'C:\Users\ASUS\AppData\Local\Temp\tmpyk0pzozg'. The following endpoints are available:
 
 * Endpoint 'serve'
   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 6), dtype=tf.float32, name='features')
 Output Type:
   TensorSpec(shape=(None, 3), dtype=tf.float32, name=None)
 Captures:
-  1622581551440: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  1622581552400: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  1622581552592: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  1622581551248: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  1622581552784: TensorSpec(shape=(), dtype=tf.resource, name=None)
-  1622581552016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733943824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733944784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733944976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733943632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733945168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2529733944400: TensorSpec(shape=(), dtype=tf.resource, name=None)
 [SAVE] Keras model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.keras
 [SAVE] TFLite model: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_fp32.tflite
 [SAVE] Metrics: C:\LogiEdge\LogiEdge_Complete_Assignment_Package\training\models\m1_metrics.json
