@@ -4,7 +4,3 @@ __pycache__/
 *.db
 *.db-wal
 *.db-shm
-inference/model.tflite
-inference/preprocessing.py
-inference/tflite_eval.py
-inference/training_stats.npy
